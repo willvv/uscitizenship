@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Audio Study Episodes — US Citizenship Civics Test 2025</title>
-<meta name="description" content="Listen to all 7 audio episodes covering the official USCIS civics test questions. Study while you commute, cook, or walk. Bilingual English and Spanish. Free, no signup required.">
+<meta name="description" content="Listen to 10 audio episodes covering all 100 official USCIS civics test questions. Each topic includes a full episode plus a 'questions only' version for quick review. Study while you commute, cook, or walk. Free, no signup.">
 <link rel="canonical" href="https://uscitizenship.prepmundo.com/listen/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://uscitizenship.prepmundo.com/listen/">
 <meta property="og:title" content="Audio Study Episodes — US Citizenship Civics Test 2025">
-<meta property="og:description" content="7 audio episodes covering all 100 USCIS civics questions. Study on the go. Free.">
+<meta property="og:description" content="10 audio episodes covering all 100 USCIS civics questions — plus a questions-only track for each topic. Study on the go. Free.">
 <meta property="og:image" content="https://uscitizenship.prepmundo.com/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="US Citizenship Audio Study Episodes">
-<meta name="twitter:description" content="7 episodes covering all 100 USCIS civics questions. Free.">
+<meta name="twitter:description" content="10 episodes covering all 100 USCIS civics questions. Free.">
 <link rel="alternate" hreflang="en" href="https://uscitizenship.prepmundo.com/listen/">
 <link rel="alternate" hreflang="es" href="https://uscitizenship.prepmundo.com/listen/?lang=es">
 <link rel="alternate" hreflang="x-default" href="https://uscitizenship.prepmundo.com/listen/">
@@ -61,8 +61,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .tab-btn{flex-shrink:0;padding:1rem 1.5rem;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:.4rem;}
 .tab-btn.active{color:var(--navy);border-bottom-color:var(--amber);}
 .tab-btn:hover:not(.active){color:var(--navy);background:var(--bg);}
-.tab-panel{display:none;}
-.tab-panel.active{display:block;}
 
 /* ── SECTION COMMONS ── */
 .section{padding:3.5rem 0;}
@@ -86,6 +84,11 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .ep-player audio{width:100%;border-radius:var(--r);}
 .ep-coming{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;background:var(--bg);border-radius:var(--r);font-size:.82rem;color:var(--muted);}
 .ep-coming svg{color:var(--amber);flex-shrink:0;}
+
+/* ── COMPANION TRACK ── */
+.ep-companion{margin-top:.875rem;padding-top:.875rem;border-top:1px dashed var(--border);}
+.ep-companion-lbl{font-size:.72rem;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;}
+.ep-companion-lbl svg{color:var(--amber);}
 
 /* ── FOOTER ── */
 footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
@@ -156,7 +159,7 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
   <div class="wrap">
     <span class="sec-label" data-en="Audio Study Guide" data-es="Guía de Estudio en Audio">Audio Study Guide</span>
     <h1 class="sec-h2" data-en="Study while you <em>commute, cook, or walk</em>" data-es="Estudia mientras <em>manejas, cocinas o caminas</em>">Study while you <em>commute, cook, or walk</em></h1>
-    <p class="sec-p" data-en="Each episode covers one section of the civics test — the questions, the answers, and the context you need to remember them. New episodes drop as they're ready." data-es="Cada episodio cubre una sección del examen de cívica — las preguntas, las respuestas y el contexto para recordarlas. Los nuevos episodios se publican conforme están listos.">Each episode covers one section of the civics test — the questions, the answers, and the context you need to remember them. New episodes drop as they're ready.</p>
+    <p class="sec-p" data-en="10 episodes covering all 100 civics questions — full narrative episodes and a shorter 'questions only' version for each topic. New episodes drop as they're ready." data-es="10 episodios con las 100 preguntas de cívica — episodios completos y una versión corta de solo preguntas por tema. Los nuevos episodios se publican conforme están listos.">10 episodes covering all 100 civics questions — full narrative episodes and a shorter 'questions only' version for each topic. New episodes drop as they're ready.</p>
     <div class="episodes-grid" id="episodes-list"></div>
   </div>
 </div>
@@ -172,6 +175,7 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
           <a href="https://www.instagram.com/prepmundo.latino/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
           <a href="https://www.youtube.com/@PrepMundo-Latino" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
           <a href="https://www.facebook.com/prepmundo.latino" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.tiktok.com/@prepmundo.latino" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
         </div>
       </div>
       <div>
@@ -222,47 +226,149 @@ try { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; } c
 
 // ── AUDIO EPISODES ──
 var EPISODES = [
-  {num:1, available:false, en_title:'Principles of American Democracy', es_title:'Principios de la Democracia Americana',
-   en_desc:'Questions 1–12. Covers the Constitution, the Bill of Rights, the Declaration of Independence, and the foundations of American government.',
-   es_desc:'Preguntas 1–12. Cubre la Constitución, la Declaración de Derechos, la Declaración de Independencia y las bases del gobierno americano.',
-   en_qs:'Questions 1–12', es_qs:'Preguntas 1–12', file:'audio/ep1-american-democracy.mp3'},
-  {num:2, available:false, en_title:'System of Government', es_title:'Sistema de Gobierno',
-   en_desc:'Questions 13–47. The three branches, Congress, the President, the Supreme Court, political parties, and state governments.',
-   es_desc:'Preguntas 13–47. Las tres ramas, el Congreso, el Presidente, la Corte Suprema, los partidos políticos y los gobiernos estatales.',
-   en_qs:'Questions 13–47', es_qs:'Preguntas 13–47', file:'audio/ep2-system-of-government.mp3'},
-  {num:3, available:false, en_title:'Rights and Responsibilities', es_title:'Derechos y Responsabilidades',
-   en_desc:'Questions 48–57. Voting rights, citizens\' unique rights, responsibilities like taxes and Selective Service registration.',
-   es_desc:'Preguntas 48–57. Derechos de voto, derechos exclusivos de ciudadanos, responsabilidades como impuestos y el Servicio Selectivo.',
-   en_qs:'Questions 48–57', es_qs:'Preguntas 48–57', file:'audio/ep3-rights-responsibilities.mp3'},
-  {num:4, available:false, en_title:'Colonial Period and Independence', es_title:'Período Colonial e Independencia',
-   en_desc:'Questions 58–70. Why colonists came to America, the Declaration of Independence, the Constitutional Convention, and the Founding Fathers.',
-   es_desc:'Preguntas 58–70. Por qué llegaron los colonizadores a América, la Declaración de Independencia, la Convención Constitucional y los Padres Fundadores.',
-   en_qs:'Questions 58–70', es_qs:'Preguntas 58–70', file:'audio/ep4-colonial-independence.mp3'},
-  {num:5, available:false, en_title:'American History: The 1800s', es_title:'Historia Americana: El Siglo XIX',
-   en_desc:'Questions 71–77. The Louisiana Purchase, the Civil War, Abraham Lincoln, the Emancipation Proclamation, and Susan B. Anthony.',
-   es_desc:'Preguntas 71–77. La Compra de Luisiana, la Guerra Civil, Abraham Lincoln, la Proclamación de Emancipación y Susan B. Anthony.',
-   en_qs:'Questions 71–77', es_qs:'Preguntas 71–77', file:'audio/ep5-1800s.mp3'},
-  {num:6, available:false, en_title:'Recent American History', es_title:'Historia Americana Reciente',
-   en_desc:'Questions 78–87. The World Wars, the Cold War, the civil rights movement, Martin Luther King Jr., and September 11.',
-   es_desc:'Preguntas 78–87. Las Guerras Mundiales, la Guerra Fría, el movimiento de derechos civiles, Martin Luther King Jr. y el 11 de septiembre.',
-   en_qs:'Questions 78–87', es_qs:'Preguntas 78–87', file:'audio/ep6-recent-history.mp3'},
-  {num:7, available:false, en_title:'Geography, Symbols & Holidays', es_title:'Geografía, Símbolos y Feriados',
-   en_desc:'Questions 88–100. US rivers, oceans, territories, bordering countries, the flag, the national anthem, and national holidays.',
-   es_desc:'Preguntas 88–100. Ríos, océanos, territorios, países fronterizos, la bandera, el himno nacional y los feriados nacionales.',
-   en_qs:'Questions 88–100', es_qs:'Preguntas 88–100', file:'audio/ep7-geography-symbols-holidays.mp3'}
+  {
+    num: 1, available: false, companion: false,
+    en_title: 'How the 2025 Test Works',
+    es_title: 'Cómo Funciona el Examen 2025',
+    en_desc: 'An overview of the new 2025 USCIS civics test: 20 questions asked, 12 correct to pass, what the 65+ exemption means, and what to expect on interview day.',
+    es_desc: 'Una descripción general del nuevo examen de cívica USCIS 2025: 20 preguntas, 12 correctas para aprobar, la exención para mayores de 65 años y qué esperar el día de la entrevista.',
+    en_qs: 'Introduction — test format overview',
+    es_qs: 'Introducción — descripción del formato',
+    file: 'audio/ep1-how-the-test-works.mp3'
+  },
+  {
+    num: 2, available: false, companion: true,
+    en_title: 'Principles of American Government',
+    es_title: 'Principios del Gobierno Americano',
+    en_desc: 'The Constitution, the Bill of Rights, the Declaration of Independence, freedom of religion, the rule of law, and the foundations of American democracy.',
+    es_desc: 'La Constitución, la Declaración de Derechos, la Declaración de Independencia, libertad de religión, el estado de derecho y las bases de la democracia americana.',
+    en_qs: 'Questions 1–12',
+    es_qs: 'Preguntas 1–12',
+    file: 'audio/ep2-american-govt.mp3',
+    companion_file: 'audio/ep2-american-govt-questions.mp3'
+  },
+  {
+    num: 3, available: false, companion: true,
+    en_title: 'System of Government I: Legislative Branch',
+    es_title: 'Sistema de Gobierno I: Rama Legislativa',
+    en_desc: 'Congress, the Senate, the House of Representatives, how federal laws are made, terms of office, and what senators and representatives do.',
+    es_desc: 'El Congreso, el Senado, la Cámara de Representantes, cómo se crean las leyes federales, los períodos de mandato y qué hacen los senadores y representantes.',
+    en_qs: 'Questions 13–25',
+    es_qs: 'Preguntas 13–25',
+    file: 'audio/ep3-legislative-branch.mp3',
+    companion_file: 'audio/ep3-legislative-branch-questions.mp3'
+  },
+  {
+    num: 4, available: false, companion: true,
+    en_title: 'System of Government II: Executive & Judicial',
+    es_title: 'Sistema de Gobierno II: Ramas Ejecutiva y Judicial',
+    en_desc: 'The President, Vice President, Cabinet, Supreme Court, checks and balances, federal vs. state powers, and political parties.',
+    es_desc: 'El Presidente, Vicepresidente, Gabinete, Corte Suprema, controles y equilibrios, poderes federales vs. estatales y partidos políticos.',
+    en_qs: 'Questions 26–47',
+    es_qs: 'Preguntas 26–47',
+    file: 'audio/ep4-executive-judicial.mp3',
+    companion_file: 'audio/ep4-executive-judicial-questions.mp3'
+  },
+  {
+    num: 5, available: false, companion: true,
+    en_title: 'Rights and Responsibilities',
+    es_title: 'Derechos y Responsabilidades',
+    en_desc: 'Voting rights, rights that belong only to citizens, the Pledge of Allegiance, the Oath of Citizenship, paying taxes, and Selective Service registration.',
+    es_desc: 'Derechos de voto, derechos exclusivos de ciudadanos, el Juramento de Lealtad, el Juramento de Ciudadanía, impuestos y el Servicio Selectivo.',
+    en_qs: 'Questions 48–57',
+    es_qs: 'Preguntas 48–57',
+    file: 'audio/ep5-rights-responsibilities.mp3',
+    companion_file: 'audio/ep5-rights-responsibilities-questions.mp3'
+  },
+  {
+    num: 6, available: false, companion: true,
+    en_title: 'Colonial Period and Independence',
+    es_title: 'Período Colonial e Independencia',
+    en_desc: 'Why colonists came to America, Native Americans, the role of slavery, the Declaration of Independence, the Constitutional Convention, and the Founding Fathers.',
+    es_desc: 'Por qué llegaron los colonizadores a América, los nativos americanos, la esclavitud, la Declaración de Independencia, la Convención Constitucional y los Padres Fundadores.',
+    en_qs: 'Questions 58–70',
+    es_qs: 'Preguntas 58–70',
+    file: 'audio/ep6-colonial-independence.mp3',
+    companion_file: 'audio/ep6-colonial-independence-questions.mp3'
+  },
+  {
+    num: 7, available: false, companion: true,
+    en_title: 'The 1800s',
+    es_title: 'El Siglo XIX',
+    en_desc: 'The Louisiana Purchase, the Civil War, Abraham Lincoln, the Emancipation Proclamation, and Susan B. Anthony\'s fight for women\'s rights.',
+    es_desc: 'La Compra de Luisiana, la Guerra Civil, Abraham Lincoln, la Proclamación de Emancipación y la lucha de Susan B. Anthony por los derechos de la mujer.',
+    en_qs: 'Questions 71–77',
+    es_qs: 'Preguntas 71–77',
+    file: 'audio/ep7-1800s.mp3',
+    companion_file: 'audio/ep7-1800s-questions.mp3'
+  },
+  {
+    num: 8, available: false, companion: true,
+    en_title: 'Recent American History',
+    es_title: 'Historia Americana Reciente',
+    en_desc: 'The World Wars, the Great Depression, the Cold War, the civil rights movement, Martin Luther King Jr., September 11, and American Indian tribes.',
+    es_desc: 'Las Guerras Mundiales, la Gran Depresión, la Guerra Fría, el movimiento de derechos civiles, Martin Luther King Jr., el 11 de septiembre y las tribus de indios americanos.',
+    en_qs: 'Questions 78–87',
+    es_qs: 'Preguntas 78–87',
+    file: 'audio/ep8-recent-history.mp3',
+    companion_file: 'audio/ep8-recent-history-questions.mp3'
+  },
+  {
+    num: 9, available: false, companion: true,
+    en_title: 'Symbols and Holidays',
+    es_title: 'Símbolos y Feriados',
+    en_desc: 'Rivers, oceans, territories, states that border Canada and Mexico, Washington D.C., the Statue of Liberty, the flag, the national anthem, and federal holidays.',
+    es_desc: 'Ríos, océanos, territorios, estados que colindan con Canadá y México, Washington D.C., la Estatua de la Libertad, la bandera, el himno nacional y los feriados federales.',
+    en_qs: 'Questions 88–100',
+    es_qs: 'Preguntas 88–100',
+    file: 'audio/ep9-symbols-holidays.mp3',
+    companion_file: 'audio/ep9-symbols-holidays-questions.mp3'
+  },
+  {
+    num: 10, available: false, companion: false,
+    en_title: 'Test Day + Personalized Questions',
+    es_title: 'Día del Examen + Preguntas Personalizadas',
+    en_desc: 'What to expect on interview day, how to answer questions about your state\'s governor and representatives, last-minute tips, and a final review strategy.',
+    es_desc: 'Qué esperar el día de la entrevista, cómo responder sobre el gobernador y representantes de tu estado, consejos de último momento y estrategia de repaso final.',
+    en_qs: 'State-specific questions + exam strategy',
+    es_qs: 'Preguntas de tu estado + estrategia de examen',
+    file: 'audio/ep10-test-day.mp3'
+  }
 ];
 
 function renderEpisodes() {
   var list = document.getElementById('episodes-list');
-  var cs = lang==='es' ? 'Episodio próximamente — el archivo de audio se añadirá en breve.' : 'Episode coming soon — audio will be added shortly.';
+  var isEs = lang === 'es';
+  var csText = isEs
+    ? 'Episodio próximamente — el audio se añadirá en breve.'
+    : 'Episode coming soon — audio will be added shortly.';
+  var csCText = isEs
+    ? 'Versión de solo preguntas próximamente.'
+    : 'Questions-only version coming soon.';
   var csIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+  var headphonesIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>';
+  var companionLabel = isEs ? 'Solo Preguntas' : 'Questions Only';
+
   list.innerHTML = EPISODES.map(ep => {
-    var title = lang==='es' ? ep.es_title : ep.en_title;
-    var desc  = lang==='es' ? ep.es_desc  : ep.en_desc;
-    var qs    = lang==='es' ? ep.es_qs    : ep.en_qs;
-    var player = ep.available
+    var title = isEs ? ep.es_title : ep.en_title;
+    var desc  = isEs ? ep.es_desc  : ep.en_desc;
+    var qs    = isEs ? ep.es_qs    : ep.en_qs;
+
+    var mainPlayer = ep.available
       ? '<div class="ep-player"><audio controls preload="none" style="width:100%"><source src="' + ep.file + '" type="audio/mpeg"></audio></div>'
-      : '<div class="ep-coming">' + csIcon + cs + '</div>';
+      : '<div class="ep-coming">' + csIcon + csText + '</div>';
+
+    var companionHtml = '';
+    if (ep.companion) {
+      var companionPlayer = ep.available
+        ? '<div class="ep-player"><audio controls preload="none" style="width:100%"><source src="' + ep.companion_file + '" type="audio/mpeg"></audio></div>'
+        : '<div class="ep-coming">' + csIcon + csCText + '</div>';
+      companionHtml = '<div class="ep-companion">' +
+        '<div class="ep-companion-lbl">' + headphonesIcon + companionLabel + '</div>' +
+        companionPlayer +
+      '</div>';
+    }
+
     return '<div class="episode-card">' +
       '<div class="ep-header">' +
         '<span class="ep-num">Ep ' + ep.num + '</span>' +
@@ -272,7 +378,8 @@ function renderEpisodes() {
           '<div class="ep-questions">' + qs + '</div>' +
         '</div>' +
       '</div>' +
-      player +
+      mainPlayer +
+      companionHtml +
     '</div>';
   }).join('');
 }

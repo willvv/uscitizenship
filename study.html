@@ -85,22 +85,63 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .category-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.75rem 0 2rem;}
 .cat-pill{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:999px;border:1.5px solid var(--border);color:var(--muted);transition:all .2s;}
 .cat-pill.active,.cat-pill:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
-.question-grid{display:flex;flex-direction:column;gap:.625rem;}
-.q-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:border-color .2s;}
-.q-card:hover{border-color:var(--border-mid);}
-.q-header{width:100%;display:flex;align-items:flex-start;gap:1rem;padding:1.125rem 1.25rem;text-align:left;background:none;border:none;cursor:pointer;}
-.q-num{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:700;background:var(--navy);color:#fff;border-radius:4px;padding:.2rem .5rem;flex-shrink:0;margin-top:.05rem;}
+
+/* ── FLIP CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:.875rem;margin-top:.5rem;}
+.flip-card{height:220px;perspective:1000px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.flip-card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1);}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--rl);padding:1rem 1.125rem;display:flex;flex-direction:column;}
+.flip-card-front{background:#fff;border:1.5px solid var(--border);justify-content:space-between;transition:border-color .2s,box-shadow .2s;}
+.flip-card:hover .flip-card-front{border-color:var(--border-mid);box-shadow:0 2px 12px rgba(11,36,71,.07);}
+.flip-card-back{background:var(--navy);transform:rotateY(180deg);overflow-y:auto;justify-content:flex-start;gap:.375rem;}
+.fc-header{display:flex;align-items:flex-start;gap:.5rem;}
+.q-num{font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:700;background:var(--navy);color:#fff;border-radius:4px;padding:.2rem .45rem;flex-shrink:0;margin-top:.1rem;}
 .q-num.senior{background:#7C3AED;}
-.q-text{font-size:.92rem;font-weight:600;color:var(--navy);flex:1;line-height:1.45;text-align:left;}
-.q-chevron{color:var(--amber);flex-shrink:0;transition:transform .25s;}
-.q-card.open .q-chevron{transform:rotate(180deg);}
-.q-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
-.q-card.open .q-body{max-height:600px;}
-.q-inner{padding:.25rem 1.25rem 1.25rem 1.25rem;padding-left:calc(1.25rem + 2.5rem + 1rem);}
-.q-answer{font-size:.88rem;font-weight:700;color:var(--green);margin-bottom:.5rem;}
-.q-extra{font-size:.82rem;color:var(--muted);line-height:1.65;}
-.q-tip{font-size:.78rem;font-style:italic;color:var(--amber-dark);margin-top:.5rem;padding:.5rem .75rem;background:var(--amber-bg);border-radius:var(--r);}
-.senior-note{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:700;color:#7C3AED;display:inline-flex;align-items:center;gap:.3rem;margin-top:.4rem;}
+.fc-question{font-size:.88rem;font-weight:600;color:var(--navy);line-height:1.4;flex:1;}
+.flip-hint{font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;margin-top:auto;padding-top:.375rem;}
+.fc-answer{font-size:.9rem;font-weight:700;color:#34D399;line-height:1.4;}
+.fc-extra{font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.55;}
+.fc-senior{font-size:.66rem;font-weight:700;color:#A78BFA;display:flex;align-items:center;gap:.25rem;margin-top:auto;padding-top:.25rem;}
+
+/* ── INFOGRAPHICS ── */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;margin-top:.5rem;}
+.infographic-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--rl);padding:1.5rem;}
+.info-card-title{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.35rem;display:flex;align-items:center;gap:.5rem;}
+.info-card-title svg{color:var(--amber);flex-shrink:0;}
+.info-card-sub{font-size:.75rem;color:var(--muted);margin-bottom:.875rem;}
+
+/* Holidays grid */
+.holidays-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;}
+.holiday-item{display:flex;justify-content:space-between;align-items:center;padding:.375rem .5rem;border-radius:6px;background:var(--bg);}
+.holiday-item.highlight{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.18);}
+.holiday-name{font-size:.76rem;color:var(--text);font-weight:500;}
+.holiday-date{font-size:.68rem;color:var(--muted);font-weight:600;background:#fff;padding:.1rem .375rem;border-radius:3px;flex-shrink:0;margin-left:.25rem;}
+.holiday-date.special{background:var(--amber);color:var(--navy);}
+
+/* Law pyramid */
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:.3rem;margin:.25rem 0 .5rem;}
+.pyramid-level{border-radius:6px;padding:.45rem 1rem;text-align:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:.8rem;}
+.pyr-1{background:#B45309;color:#fff;width:46%;}
+.pyr-2{background:#D97706;color:#fff;width:62%;}
+.pyr-3{background:#F59E0B;color:var(--navy);width:78%;}
+.pyr-4{background:#FDE68A;color:var(--navy);width:95%;}
+.pyramid-note{font-size:.72rem;color:var(--amber-dark);font-weight:600;text-align:center;padding:.375rem .5rem;background:var(--amber-bg);border-radius:4px;width:100%;}
+
+/* Geography compass */
+.geo-compass{background:rgba(219,234,254,.3);border-radius:var(--r);padding:.875rem .75rem;}
+.geo-north,.geo-south{text-align:center;padding:.2rem 0;}
+.geo-mid{display:flex;align-items:center;gap:.5rem;justify-content:center;padding:.35rem 0;}
+.geo-usa{flex:0 0 auto;width:110px;text-align:center;background:#fff;border:2px solid #3B82F6;border-radius:var(--r);padding:.5rem .625rem;}
+.geo-usa strong{font-family:'Outfit',sans-serif;font-size:1rem;color:#1D4ED8;display:block;font-weight:800;}
+.geo-usa span{font-size:.62rem;color:var(--muted);display:block;line-height:1.35;}
+.geo-label{display:inline-block;border-radius:4px;padding:.3rem .5rem;font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:700;text-align:center;line-height:1.4;}
+.geo-label.country{background:#10B981;color:#fff;}
+.geo-label.ocean{background:#3B82F6;color:#fff;}
+.geo-borders{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.625rem;}
+.geo-border-box{background:var(--bg);border-radius:6px;padding:.4rem .5rem;}
+.geo-border-lbl{font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:700;color:#3B82F6;display:block;margin-bottom:.15rem;}
+.geo-border-states{font-size:.68rem;color:var(--muted);line-height:1.4;}
 
 /* ── FOOTER ── */
 footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
@@ -202,10 +243,10 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
   <div class="wrap">
     <span class="sec-label" data-en="2025 USCIS Civics Test — Official Study Material" data-es="Examen de Cívica USCIS 2025 — Material de Estudio Oficial">2025 USCIS Civics Test — Official Study Material</span>
     <h1 class="sec-h2" data-en="Learn the material, <em>not just the answers</em>" data-es="Aprende el material, <em>no solo las respuestas</em>">Learn the material, <em>not just the answers</em></h1>
-    <p class="sec-p" data-en="Each question includes context so you understand why the answer is correct. Purple badges mark the questions for applicants 65 and older." data-es="Cada pregunta incluye contexto para que entiendas por qué la respuesta es correcta. Las insignias moradas marcan las preguntas para solicitantes de 65 años o más.">Each question includes context so you understand why the answer is correct. Purple badges mark the questions for applicants 65 and older.</p>
+    <p class="sec-p" data-en="Tap a card to flip it and reveal the answer. Purple badges (★) mark the questions for applicants 65 and older." data-es="Toca una tarjeta para voltearla y ver la respuesta. Las insignias moradas (★) marcan las preguntas para solicitantes de 65 años o más.">Tap a card to flip it and reveal the answer. Purple badges (★) mark the questions for applicants 65 and older.</p>
 
     <div class="category-nav" id="cat-nav"></div>
-    <div class="question-grid" id="q-grid"></div>
+    <div id="q-grid"></div>
   </div>
 </div>
 
@@ -478,16 +519,17 @@ var SENIOR_IDS = new Set([1,3,5,6,7,13,15,16,17,18,19,20,21,26,27,28,30,32,43,45
 
 var CATEGORIES = [
   {id:'all', en:'All 100', es:'Todas (100)', ids: null},
-  {id:'gov', en:'American Government', es:'Gobierno Americano', ids: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57]},
   {id:'dem', en:'Principles of Democracy', es:'Principios de Democracia', ids: [1,2,3,4,5,6,7,8,9,10,11,12]},
   {id:'sys', en:'System of Government', es:'Sistema de Gobierno', ids: [13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]},
   {id:'rts', en:'Rights & Responsibilities', es:'Derechos y Responsabilidades', ids: [48,49,50,51,52,53,54,55,56,57]},
   {id:'hist', en:'American History', es:'Historia Americana', ids: [58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87]},
-  {id:'civ', en:'Integrated Civics', es:'Civismo Integrado', ids: [88,89,90,91,92,93,94,95,96,97,98,99,100]},
-  {id:'senior', en:'65+ Version (20 questions)', es:'Versión 65+ (20 preguntas)', ids: [...SENIOR_IDS]}
+  {id:'civ', en:'Geography & Symbols', es:'Geografía y Símbolos', ids: [88,89,90,91,92,93,94,95,96,97,98,99,100]},
+  {id:'senior', en:'65+ Version (★ questions)', es:'Versión 65+ (preguntas ★)', ids: [...SENIOR_IDS]},
+  {id:'info', en:'Infographics', es:'Infografías', ids: null}
 ];
 
 var activeCat = 'all';
+
 function renderStudy() {
   var nav = document.getElementById('cat-nav');
   nav.innerHTML = CATEGORIES.map(c =>
@@ -495,35 +537,122 @@ function renderStudy() {
     (lang==='es'?c.es:c.en) + '</button>'
   ).join('');
 
+  var grid = document.getElementById('q-grid');
+
+  if (activeCat === 'info') {
+    renderInfoGraphics(grid);
+    return;
+  }
+
   var cat = CATEGORIES.find(c=>c.id===activeCat);
   var ids = cat.ids ? new Set(cat.ids) : null;
   var qs = ids ? QS.filter(q=>ids.has(q[0])) : QS;
 
-  var grid = document.getElementById('q-grid');
+  grid.className = 'cards-grid';
+  var isEs = lang === 'es';
+  var tapHint = isEs ? 'Toca para ver la respuesta' : 'Tap to reveal answer';
+  var flipIcon = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>';
+  var seniorLabel = isEs ? 'Versión 65+' : '65+ Version';
+
   grid.innerHTML = qs.map(q => {
     var isSenior = SENIOR_IDS.has(q[0]);
-    var question = lang==='es' ? q[4] : q[1];
-    var answer   = lang==='es' ? q[5] : q[2];
-    var extra    = lang==='es' ? '' : q[3];
-    return '<div class="q-card" id="qcard-'+q[0]+'">' +
-      '<button class="q-header" onclick="toggleQ('+q[0]+')">' +
-        '<span class="q-num' + (isSenior?' senior':'') + '">' + (isSenior?'★ ':'') + q[0] + '</span>' +
-        '<span class="q-text">' + question + '</span>' +
-        '<svg class="q-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>' +
-      '</button>' +
-      '<div class="q-body"><div class="q-inner">' +
-        '<div class="q-answer">' + answer + '</div>' +
-        (extra ? '<div class="q-extra">' + extra + '</div>' : '') +
-        (isSenior ? '<div class="senior-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' +
-          (lang==='es'?'Incluida en la versión de 65 años o más':'Included in the 65+ version') + '</div>' : '') +
-      '</div></div>' +
+    var question = isEs ? q[4] : q[1];
+    var answer   = isEs ? q[5] : q[2];
+    var extra    = isEs ? '' : q[3];
+    var numClass = 'q-num' + (isSenior ? ' senior' : '');
+    return '<div class="flip-card" id="qcard-' + q[0] + '" onclick="flipCard(' + q[0] + ')">' +
+      '<div class="flip-card-inner">' +
+        '<div class="flip-card-front">' +
+          '<div class="fc-header">' +
+            '<span class="' + numClass + '">' + (isSenior ? '★ ' : '') + q[0] + '</span>' +
+            '<span class="fc-question">' + question + '</span>' +
+          '</div>' +
+          '<div class="flip-hint">' + flipIcon + tapHint + '</div>' +
+        '</div>' +
+        '<div class="flip-card-back">' +
+          '<div class="fc-answer">' + answer + '</div>' +
+          (extra ? '<div class="fc-extra">' + extra + '</div>' : '') +
+          (isSenior ? '<div class="fc-senior">★ ' + seniorLabel + '</div>' : '') +
+        '</div>' +
+      '</div>' +
     '</div>';
   }).join('');
 }
+
 function setCat(id) { activeCat = id; renderStudy(); }
-function toggleQ(id) {
-  var card = document.getElementById('qcard-'+id);
-  card.classList.toggle('open');
+
+function flipCard(id) {
+  document.getElementById('qcard-' + id).classList.toggle('flipped');
+}
+
+function renderInfoGraphics(grid) {
+  grid.className = 'info-grid';
+  var isEs = lang === 'es';
+
+  var holidaysData = [
+    {en:"New Year's Day", es:'Año Nuevo', date:'Jan 1'},
+    {en:'MLK Jr. Day', es:'Día de MLK Jr.', date: isEs ? 'Ene (3er lun)' : 'Jan (3rd Mon)'},
+    {en:"Presidents' Day", es:'Día de Presidentes', date: isEs ? 'Feb (3er lun)' : 'Feb (3rd Mon)'},
+    {en:'Memorial Day', es:'Día de los Caídos', date: isEs ? 'May (últ. lun)' : 'May (last Mon)'},
+    {en:'Independence Day', es:'Día de Independencia', date:'Jul 4', special:true},
+    {en:'Labor Day', es:'Día del Trabajo', date: isEs ? 'Sep (1er lun)' : 'Sep (1st Mon)'},
+    {en:'Columbus Day', es:'Día de Colón', date: isEs ? 'Oct (2do lun)' : 'Oct (2nd Mon)'},
+    {en:'Veterans Day', es:'Día de Veteranos', date:'Nov 11'},
+    {en:'Thanksgiving', es:'Acción de Gracias', date: isEs ? 'Nov (4to jue)' : 'Nov (4th Thu)'},
+    {en:'Christmas', es:'Navidad', date:'Dec 25'}
+  ];
+
+  var calIcon = '<svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+  var scaleIcon = '<svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 9l9-7 9 7"/><path d="M5 9v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"/></svg>';
+  var globeIcon = '<svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+
+  var holidaysHtml = '<div class="holidays-grid">' +
+    holidaysData.map(h =>
+      '<div class="holiday-item' + (h.special ? ' highlight' : '') + '">' +
+        '<span class="holiday-name">' + (isEs ? h.es : h.en) + '</span>' +
+        '<span class="holiday-date' + (h.special ? ' special' : '') + '">' + h.date + '</span>' +
+      '</div>'
+    ).join('') +
+  '</div>';
+
+  var pyramidHtml = '<div class="pyramid">' +
+    '<div class="pyramid-level pyr-1">' + (isEs ? 'La Constitución' : 'Constitution') + '</div>' +
+    '<div class="pyramid-level pyr-2">' + (isEs ? 'Leyes Federales' : 'Federal Laws') + '</div>' +
+    '<div class="pyramid-level pyr-3">' + (isEs ? 'Leyes Estatales' : 'State Laws') + '</div>' +
+    '<div class="pyramid-level pyr-4">' + (isEs ? 'Leyes Locales (Ciudad/Condado)' : 'Local Laws (City/County)') + '</div>' +
+    '<div class="pyramid-note">' + (isEs ? '¡La Constitución está POR ENCIMA de todo!' : 'The Constitution is ABOVE everything!') + '</div>' +
+  '</div>';
+
+  var compassHtml = '<div class="geo-compass">' +
+    '<div class="geo-north"><span class="geo-label country">' + (isEs ? 'NORTE: Canadá' : 'NORTH: Canada') + '</span></div>' +
+    '<div class="geo-mid">' +
+      '<span class="geo-label ocean">' + (isEs ? 'OESTE<br>Océano<br>Pacífico' : 'WEST<br>Pacific<br>Ocean') + '</span>' +
+      '<div class="geo-usa"><strong>USA</strong><span>50 ' + (isEs ? 'Estados' : 'States') + '</span><span>' + (isEs ? 'Capital: Washington D.C.' : 'Capital: Washington D.C.') + '</span></div>' +
+      '<span class="geo-label ocean">' + (isEs ? 'ESTE<br>Océano<br>Atlántico' : 'EAST<br>Atlantic<br>Ocean') + '</span>' +
+    '</div>' +
+    '<div class="geo-south"><span class="geo-label country">' + (isEs ? 'SUR: México' : 'SOUTH: Mexico') + '</span></div>' +
+    '<div class="geo-borders">' +
+      '<div class="geo-border-box"><span class="geo-border-lbl">' + (isEs ? 'Frontera con Canadá:' : 'Borders Canada:') + '</span><span class="geo-border-states">New York, Alaska, Montana, Minnesota, North Dakota, Idaho, Washington, Ohio, Pennsylvania, Vermont, New Hampshire, Maine, Michigan</span></div>' +
+      '<div class="geo-border-box"><span class="geo-border-lbl">' + (isEs ? 'Frontera con México:' : 'Borders Mexico:') + '</span><span class="geo-border-states">California, Arizona, New Mexico, Texas</span></div>' +
+    '</div>' +
+  '</div>';
+
+  grid.innerHTML =
+    '<div class="infographic-card">' +
+      '<div class="info-card-title">' + calIcon + (isEs ? 'Feriados Nacionales de EE.UU.' : 'National U.S. Holidays') + '</div>' +
+      '<div class="info-card-sub">' + (isEs ? 'Pregunta 100 — Nombre dos feriados nacionales' : 'Question 100 — Name two national U.S. holidays') + '</div>' +
+      holidaysHtml +
+    '</div>' +
+    '<div class="infographic-card">' +
+      '<div class="info-card-title">' + scaleIcon + (isEs ? 'La Pirámide Legal' : 'The Law Pyramid') + '</div>' +
+      '<div class="info-card-sub">' + (isEs ? 'Pregunta 1 — ¿Cuál es la ley suprema del país?' : 'Question 1 — What is the supreme law of the land?') + '</div>' +
+      pyramidHtml +
+    '</div>' +
+    '<div class="infographic-card">' +
+      '<div class="info-card-title">' + globeIcon + (isEs ? 'Geografía de EE.UU.' : 'U.S. Geography Compass') + '</div>' +
+      '<div class="info-card-sub">' + (isEs ? 'Preguntas 88–93 — Ríos, océanos, fronteras' : 'Questions 88–93 — Rivers, oceans, borders') + '</div>' +
+      compassHtml +
+    '</div>';
 }
 
 // ── SCROLL REVEAL ──
