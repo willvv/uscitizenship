@@ -47,8 +47,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .pm-bar-logo{display:flex;align-items:center;gap:.5rem;font-family:'Outfit',sans-serif;font-weight:800;font-size:.88rem;color:#fff;}
 .pm-bar-logo em{font-style:normal;color:var(--amber);}
 .pm-bar-logo svg{flex-shrink:0;}
-.pm-bar-right a{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:.4rem;transition:color .2s;}
-.pm-bar-right a:hover{color:var(--amber);}
+.pm-bar-right{display:flex;align-items:center;gap:.75rem;}
+.lang-toggle{display:flex;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.15);}
+.lang-toggle button{padding:.25rem .75rem;font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.55);transition:all .2s;}
+.lang-toggle button.active{background:var(--amber);color:var(--navy);border-radius:999px;}
 
 /* ── HERO ── */
 .hero{background:var(--navy);padding:4rem 0 3.5rem;position:relative;overflow:hidden;}
@@ -156,32 +158,11 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
     <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#F59E0B"/><circle cx="16" cy="16" r="9.5" fill="none" stroke="#0B2447" stroke-width="1.6"/><ellipse cx="16" cy="16" rx="4.2" ry="9.5" fill="none" stroke="#0B2447" stroke-width="1.6"/><line x1="6.5" y1="16" x2="25.5" y2="16" stroke="#0B2447" stroke-width="1.6"/><line x1="8" y1="11.2" x2="24" y2="11.2" stroke="#0B2447" stroke-width="1.2"/><line x1="8" y1="20.8" x2="24" y2="20.8" stroke="#0B2447" stroke-width="1.2"/></svg>
     <span><em>Prep</em>Mundo</span>
   </a>
-  <div class="pm-bar-right"></div>
-</div>
-
-<!-- TABS -->
-<div class="tabs-bar">
-  <div class="wrap tabs-inner">
-    <a href="index.html" class="tab-btn" onclick="showTab('study')">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      Study
-    </a>
-    <a href="index.html#quiz" class="tab-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      Practice Test
-    </a>
-    <a href="index.html#listen" class="tab-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-      Listen
-    </a>
-    <a href="index.html#faq" class="tab-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      FAQ
-    </a>
-    <a href="my-reps.html" class="tab-btn active">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      My Reps
-    </a>
+  <div class="pm-bar-right">
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
   </div>
 </div>
 
@@ -190,25 +171,51 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
   <div class="wrap" style="position:relative;z-index:2;">
     <div class="hero-eyebrow">
       <span class="hero-dot"></span>
-      <span class="hero-eyebrow-text">Citizenship Test · Questions 20, 23 &amp; 43</span>
+      <span class="hero-eyebrow-text" data-en="Citizenship Test · Questions 20, 23 &amp; 43" data-es="Examen de Ciudadanía · Preguntas 20, 23 y 43">Citizenship Test · Questions 20, 23 &amp; 43</span>
     </div>
-    <h1 class="hero-h1">Who are <em>my representatives?</em></h1>
-    <p class="hero-p">Three civics test questions ask about YOUR specific officials — not a fixed answer. Enter your ZIP code to find your current US Senators, House Representative, and Governor right now.</p>
+    <h1 class="hero-h1" data-en="Who are <em>my representatives?</em>" data-es="¿Quiénes son <em>mis representantes?</em>">Who are <em>my representatives?</em></h1>
+    <p class="hero-p" data-en="Three civics test questions ask about YOUR specific officials — not a fixed answer. Enter your ZIP code to find your current US Senators, House Representative, and Governor right now." data-es="Tres preguntas del examen de cívica preguntan sobre TUS funcionarios específicos — no tienen una respuesta fija. Ingresa tu código postal para encontrar tus senadores, representante y gobernador actuales.">Three civics test questions ask about YOUR specific officials — not a fixed answer. Enter your ZIP code to find your current US Senators, House Representative, and Governor right now.</p>
 
     <div class="zip-form">
-      <input class="zip-input" type="text" id="zip-input" placeholder="ZIP code" maxlength="5" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+      <input class="zip-input" type="text" id="zip-input" data-en-placeholder="ZIP code" data-es-placeholder="Código postal" placeholder="ZIP code" maxlength="5" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
       <button class="btn btn-amber" onclick="doLookup()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        Look up
+        <span data-en="Look up" data-es="Buscar">Look up</span>
       </button>
     </div>
 
     <div class="test-badge">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      Answers to Test Questions 20, 23, and 43 are based on your state and district
+      <span data-en="Answers to Test Questions 20, 23, and 43 depend on your state and district" data-es="Las respuestas a las Preguntas 20, 23 y 43 dependen de tu estado y distrito">Answers to Test Questions 20, 23, and 43 depend on your state and district</span>
     </div>
   </div>
 </section>
+
+<!-- TABS -->
+<div class="tabs-bar">
+  <div class="wrap tabs-inner">
+    <a href="index.html" class="tab-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span data-en="Study" data-es="Estudiar">Study</span>
+    </a>
+    <a href="index.html#quiz" class="tab-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span data-en="Practice Test" data-es="Examen de Práctica">Practice Test</span>
+    </a>
+    <a href="index.html#listen" class="tab-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      <span data-en="Listen" data-es="Escuchar">Listen</span>
+    </a>
+    <a href="index.html#faq" class="tab-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span data-en="FAQ" data-es="Preguntas">FAQ</span>
+    </a>
+    <a href="my-reps.html" class="tab-btn active">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span data-en="My Reps" data-es="Mis Representantes">My Reps</span>
+    </a>
+  </div>
+</div>
 
 <!-- RESULTS SECTION -->
 <div id="results-section" class="section section-white">
@@ -220,24 +227,24 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
 <!-- WHY THIS MATTERS -->
 <div class="section">
   <div class="wrap">
-    <span class="sec-label">Citizenship Test Connection</span>
-    <h2 class="sec-h2">Three test questions have <em>no fixed answer</em></h2>
-    <p style="font-size:.9rem;color:var(--muted);line-height:1.75;max-width:640px;">The USCIS officer expects answers about your current officials — not historical figures. These three questions change with every election, so you need to know your local officials on interview day.</p>
+    <span class="sec-label" data-en="Citizenship Test Connection" data-es="Conexión con el Examen de Ciudadanía">Citizenship Test Connection</span>
+    <h2 class="sec-h2" data-en="Three test questions have <em>no fixed answer</em>" data-es="Tres preguntas del examen <em>no tienen respuesta fija</em>">Three test questions have <em>no fixed answer</em></h2>
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.75;max-width:640px;" data-en="The USCIS officer expects answers about your current officials — not historical figures. These three questions change with every election, so you need to know your local officials on interview day." data-es="El oficial de USCIS espera respuestas sobre tus funcionarios actuales — no figuras históricas. Estas tres preguntas cambian con cada elección, por eso debes conocer a tus funcionarios locales el día de la entrevista.">The USCIS officer expects answers about your current officials — not historical figures. These three questions change with every election, so you need to know your local officials on interview day.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-qnum">Q20</div>
-        <div class="why-q">Who is one of your state's U.S. Senators now?</div>
-        <div class="why-note">You have two US Senators. Know either name. The officer may ask for one. Senators serve 6-year terms and are elected statewide.</div>
+        <div class="why-q" data-en="Who is one of your state's U.S. Senators now?" data-es="¿Quién es uno de los senadores de EE. UU. de tu estado ahora?">Who is one of your state's U.S. Senators now?</div>
+        <div class="why-note" data-en="You have two US Senators. Know either name. The officer may ask for one. Senators serve 6-year terms and are elected statewide." data-es="Tienes dos senadores de EE. UU. Conoce cualquiera de los dos nombres. El oficial puede pedir uno. Los senadores sirven mandatos de 6 años y son elegidos en todo el estado.">You have two US Senators. Know either name. The officer may ask for one. Senators serve 6-year terms and are elected statewide.</div>
       </div>
       <div class="why-card">
         <div class="why-qnum">Q23</div>
-        <div class="why-q">Name your U.S. Representative.</div>
-        <div class="why-note">Your House Representative is elected by your specific congressional district — which is why the answer depends on your ZIP code. Representatives serve 2-year terms.</div>
+        <div class="why-q" data-en="Name your U.S. Representative." data-es="Nombre a su representante de EE. UU.">Name your U.S. Representative.</div>
+        <div class="why-note" data-en="Your House Representative is elected by your specific congressional district — which is why the answer depends on your ZIP code. Representatives serve 2-year terms." data-es="Tu representante de la Cámara es elegido por tu distrito congresional específico — por eso la respuesta depende de tu código postal. Los representantes sirven mandatos de 2 años.">Your House Representative is elected by your specific congressional district — which is why the answer depends on your ZIP code. Representatives serve 2-year terms.</div>
       </div>
       <div class="why-card">
         <div class="why-qnum">Q43</div>
-        <div class="why-q">Who is the Governor of your state now?</div>
-        <div class="why-note">Every state has a Governor elected by that state's voters. This is a 65+ exemption question too — marked with a star in the senior study set.</div>
+        <div class="why-q" data-en="Who is the Governor of your state now?" data-es="¿Quién es el gobernador de tu estado ahora?">Who is the Governor of your state now?</div>
+        <div class="why-note" data-en="Every state has a Governor elected by that state's voters. This is a 65+ exemption question too — marked with a star in the senior study set." data-es="Cada estado tiene un gobernador elegido por los votantes del estado. Esta también es una pregunta de exención para mayores de 65 años — marcada con una estrella en el set de estudio para adultos mayores.">Every state has a Governor elected by that state's voters. This is a 65+ exemption question too — marked with a star in the senior study set.</div>
       </div>
     </div>
   </div>
@@ -246,38 +253,43 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
 <!-- FAQ -->
 <div class="section section-white">
   <div class="wrap">
-    <span class="sec-label">Common Questions</span>
-    <h2 class="sec-h2">About the <em>representatives questions</em></h2>
+    <span class="sec-label" data-en="Common Questions" data-es="Preguntas Frecuentes">Common Questions</span>
+    <h2 class="sec-h2" data-en="About the <em>representatives questions</em>" data-es="Sobre las <em>preguntas de representantes</em>">About the <em>representatives questions</em></h2>
     <div class="faq-list">
       <div class="faq-item" id="faq-0">
-        <button class="faq-q" onclick="toggleFaq(0)">Do I need to know the party of my representative?
+        <button class="faq-q" onclick="toggleFaq(0)">
+          <span data-en="Do I need to know the party of my representative?" data-es="¿Necesito saber el partido de mi representante?">Do I need to know the party of my representative?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">No. The USCIS officer only asks for the name, not the political party. Just know the full name of one of your senators (for Q20), the name of your House representative (for Q23), and the name of your governor (for Q43).</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="No. The USCIS officer only asks for the name, not the political party. Just know the full name of one of your senators (for Q20), the name of your House representative (for Q23), and the name of your governor (for Q43)." data-es="No. El oficial de USCIS solo pregunta el nombre, no el partido político. Solo necesitas saber el nombre completo de uno de tus senadores (para Q20), el nombre de tu representante de la Cámara (para Q23) y el nombre de tu gobernador (para Q43).">No. The USCIS officer only asks for the name, not the political party. Just know the full name of one of your senators (for Q20), the name of your House representative (for Q23), and the name of your governor (for Q43).</div></div>
       </div>
       <div class="faq-item" id="faq-1">
-        <button class="faq-q" onclick="toggleFaq(1)">What if there was a recent election and the officials changed?
+        <button class="faq-q" onclick="toggleFaq(1)">
+          <span data-en="What if there was a recent election and the officials changed?" data-es="¿Qué pasa si hubo una elección reciente y los funcionarios cambiaron?">What if there was a recent election and the officials changed?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Always give the answer that is current on the day of your interview. If there was an election between when you filed and when you interviewed, give the name of whoever took office. The USCIS officer knows the current officials and will accept any correct answer as of that day.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="Always give the answer that is current on the day of your interview. If there was an election between when you filed and when you interviewed, give the name of whoever took office. The USCIS officer knows the current officials and will accept any correct answer as of that day." data-es="Siempre da la respuesta que sea actual el día de tu entrevista. Si hubo una elección entre cuando presentaste la solicitud y cuando te entrevistaste, da el nombre de quien asumió el cargo. El oficial de USCIS conoce los funcionarios actuales y aceptará cualquier respuesta correcta a partir de ese día.">Always give the answer that is current on the day of your interview. If there was an election between when you filed and when you interviewed, give the name of whoever took office. The USCIS officer knows the current officials and will accept any correct answer as of that day.</div></div>
       </div>
       <div class="faq-item" id="faq-2">
-        <button class="faq-q" onclick="toggleFaq(2)">How do I find my congressional district?
+        <button class="faq-q" onclick="toggleFaq(2)">
+          <span data-en="How do I find my congressional district?" data-es="¿Cómo encuentro mi distrito congressional?">How do I find my congressional district?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Your congressional district is determined by your home address. Every 10 years after the census, district lines are redrawn based on population changes. You can always look up your representative on <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> using your ZIP code.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="Your congressional district is determined by your home address. Every 10 years after the census, district lines are redrawn based on population changes. You can always look up your representative on <a href=&quot;https://www.house.gov/representatives/find-your-representative&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>house.gov</a> using your ZIP code." data-es="Tu distrito congressional está determinado por tu dirección. Cada 10 años después del censo, los límites de los distritos se redibujan según los cambios de población. Siempre puedes buscar a tu representante en <a href=&quot;https://www.house.gov/representatives/find-your-representative&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>house.gov</a> usando tu código postal.">Your congressional district is determined by your home address. Every 10 years after the census, district lines are redrawn based on population changes. You can always look up your representative on <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> using your ZIP code.</div></div>
       </div>
       <div class="faq-item" id="faq-3">
-        <button class="faq-q" onclick="toggleFaq(3)">Is the governor question only for 65+ applicants?
+        <button class="faq-q" onclick="toggleFaq(3)">
+          <span data-en="Is the governor question only for 65+ applicants?" data-es="¿La pregunta del gobernador es solo para solicitantes de 65+?">Is the governor question only for 65+ applicants?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">No — all applicants can be asked about their governor (Q43). However, the governor question is one of the specially marked questions that applicants 65 or older who have held a green card for 20+ years are required to study. For those applicants, it is a guaranteed question in the 20-question subset.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="No — all applicants can be asked about their governor (Q43). However, the governor question is one of the specially marked questions that applicants 65 or older who have held a green card for 20+ years are required to study. For those applicants, it is a guaranteed question in the 20-question subset." data-es="No — todos los solicitantes pueden ser preguntados sobre su gobernador (Q43). Sin embargo, la pregunta del gobernador es una de las preguntas especialmente marcadas que los solicitantes de 65 años o más que han tenido una tarjeta verde por 20+ años deben estudiar. Para esos solicitantes, es una pregunta garantizada en el subconjunto de 20 preguntas.">No — all applicants can be asked about their governor (Q43). However, the governor question is one of the specially marked questions that applicants 65 or older who have held a green card for 20+ years are required to study. For those applicants, it is a guaranteed question in the 20-question subset.</div></div>
       </div>
       <div class="faq-item" id="faq-4">
-        <button class="faq-q" onclick="toggleFaq(4)">What if I moved to a different state recently?
+        <button class="faq-q" onclick="toggleFaq(4)">
+          <span data-en="What if I moved to a different state recently?" data-es="¿Qué pasa si me mudé recientemente a otro estado?">What if I moved to a different state recently?</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Answer based on where you currently live at the time of the interview, not where you lived when you filed. If you recently moved, make sure to update your USCIS case with your new address, and study the officials for your new state and district.</div></div>
+        <div class="faq-a"><div class="faq-a-inner" data-en="Answer based on where you currently live at the time of the interview, not where you lived when you filed. If you recently moved, make sure to update your USCIS case with your new address, and study the officials for your new state and district." data-es="Responde según donde vives actualmente en el momento de la entrevista, no donde vivías cuando presentaste la solicitud. Si te mudaste recientemente, asegúrate de actualizar tu caso de USCIS con tu nueva dirección y estudia los funcionarios de tu nuevo estado y distrito.">Answer based on where you currently live at the time of the interview, not where you lived when you filed. If you recently moved, make sure to update your USCIS case with your new address, and study the officials for your new state and district.</div></div>
       </div>
     </div>
   </div>
@@ -287,13 +299,40 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
 <footer>
   <div class="wrap">
     <div class="footer-bottom">
-      <span>© 2026 PrepMundo. All rights reserved.</span>
-      <span>Data for senators and representatives is pulled live via <a href="https://whoismyrepresentative.com" target="_blank" rel="noopener">whoismyrepresentative.com</a>. Verify current information at <a href="https://www.uscis.gov" target="_blank" rel="noopener">uscis.gov</a>.</span>
+      <span data-en="© 2026 PrepMundo. All rights reserved." data-es="© 2026 PrepMundo. Todos los derechos reservados.">© 2026 PrepMundo. All rights reserved.</span>
+      <span data-en="Data for senators and representatives is pulled live via <a href=&quot;https://whoismyrepresentative.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>whoismyrepresentative.com</a>. Verify current information at <a href=&quot;https://www.uscis.gov&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>uscis.gov</a>." data-es="Los datos de senadores y representantes se obtienen en tiempo real de <a href=&quot;https://whoismyrepresentative.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>whoismyrepresentative.com</a>. Verifica la información actual en <a href=&quot;https://www.uscis.gov&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>uscis.gov</a>.">Data for senators and representatives is pulled live via <a href="https://whoismyrepresentative.com" target="_blank" rel="noopener">whoismyrepresentative.com</a>. Verify current information at <a href="https://www.uscis.gov" target="_blank" rel="noopener">uscis.gov</a>.</span>
     </div>
   </div>
 </footer>
 
 <script>
+// ── LANGUAGE ──
+var lang = localStorage.getItem('lang') || 'en';
+
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('lang', l);
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-es').classList.toggle('active', l === 'es');
+  applyLang();
+}
+
+function applyLang() {
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    el.innerHTML = el.getAttribute('data-' + lang);
+  });
+  var zipEl = document.getElementById('zip-input');
+  if (zipEl) zipEl.placeholder = zipEl.getAttribute('data-' + lang + '-placeholder') || zipEl.placeholder;
+}
+
+(function() {
+  if (lang === 'es') {
+    document.getElementById('btn-es').classList.add('active');
+    document.getElementById('btn-en').classList.remove('active');
+    applyLang();
+  }
+})();
+
 // ── GOVERNOR DATA ── (as of mid-2025)
 var GOVERNORS = {
   AL:{name:'Kay Ivey',party:'R',url:'https://governor.alabama.gov'},
@@ -378,15 +417,19 @@ function partyLabel(p) {
 function renderGovCard(state) {
   var g = GOVERNORS[state];
   if (!g) return '';
+  var sn = STATE_NAMES[state] || state;
+  var govLabel = lang==='es' ? 'Gobernador/a' : 'Governor';
+  var stateOf = lang==='es' ? 'Estado de ' : 'State of ';
+  var siteLabel = lang==='es' ? 'Sitio oficial del gobernador' : "Governor's official site";
   return '<div class="rep-card rep-card-gov">' +
     '<span class="rep-question-badge">Q43 · 65+</span>' +
-    '<span class="rep-role">Governor · ' + (STATE_NAMES[state] || state) + '</span>' +
+    '<span class="rep-role">' + govLabel + ' · ' + sn + '</span>' +
     '<div class="rep-name">' + g.name + '</div>' +
     '<span class="rep-party ' + partyClass(g.party) + '">' + partyLabel(g.party) + '</span>' +
-    '<div class="rep-detail" style="margin-top:.25rem;">State of ' + (STATE_NAMES[state] || state) + '</div>' +
+    '<div class="rep-detail" style="margin-top:.25rem;">' + stateOf + sn + '</div>' +
     '<a class="rep-link" href="' + g.url + '" target="_blank" rel="noopener">' +
       '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
-      "Governor's official site" +
+      siteLabel +
     '</a>' +
   '</div>';
 }
@@ -394,14 +437,18 @@ function renderGovCard(state) {
 function renderRepCard(rep) {
   var isSenator = rep.title && rep.title.toLowerCase().includes('senator');
   var qBadge = isSenator ? 'Q20' : 'Q23';
+  var phoneLabel = lang==='es' ? 'Teléfono' : 'Phone';
+  var officeLabel = lang==='es' ? 'Oficina' : 'Office';
+  var siteLabel = lang==='es' ? 'Sitio oficial' : 'Official website';
+  var districtLabel = lang==='es' ? ' Distrito ' : ' District ';
   return '<div class="rep-card">' +
     '<span class="rep-question-badge">' + qBadge + '</span>' +
-    '<span class="rep-role">' + (rep.title || (isSenator?'US Senator':'US Representative')) + (rep.state ? ' · ' + (STATE_NAMES[rep.state] || rep.state) : '') + ((!isSenator && rep.district) ? ' District ' + rep.district : '') + '</span>' +
+    '<span class="rep-role">' + (rep.title || (isSenator?'US Senator':'US Representative')) + (rep.state ? ' · ' + (STATE_NAMES[rep.state] || rep.state) : '') + ((!isSenator && rep.district) ? districtLabel + rep.district : '') + '</span>' +
     '<div class="rep-name">' + (rep.name || '—') + '</div>' +
     (rep.party ? '<span class="rep-party ' + partyClass(rep.party) + '">' + partyLabel(rep.party) + '</span>' : '') +
-    (rep.phone ? '<div class="rep-detail"><strong>Phone:</strong> ' + rep.phone + '</div>' : '') +
-    (rep.office ? '<div class="rep-detail"><strong>Office:</strong> ' + rep.office + '</div>' : '') +
-    (rep.link ? '<a class="rep-link" href="' + rep.link + '" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Official website</a>' : '') +
+    (rep.phone ? '<div class="rep-detail"><strong>' + phoneLabel + ':</strong> ' + rep.phone + '</div>' : '') +
+    (rep.office ? '<div class="rep-detail"><strong>' + officeLabel + ':</strong> ' + rep.office + '</div>' : '') +
+    (rep.link ? '<a class="rep-link" href="' + rep.link + '" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' + siteLabel + '</a>' : '') +
   '</div>';
 }
 
@@ -416,7 +463,7 @@ async function doLookup() {
   var section = document.getElementById('results-section');
   var inner = document.getElementById('results-inner');
   section.style.display = 'block';
-  inner.innerHTML = '<div class="loading"><div class="spinner"></div><span>Looking up ZIP ' + zip + '…</span></div>';
+  inner.innerHTML = '<div class="loading"><div class="spinner"></div><span>' + (lang==='es' ? 'Buscando el código postal ' : 'Looking up ZIP ') + zip + '…</span></div>';
   section.scrollIntoView({behavior:'smooth', block:'start'});
 
   try {
@@ -430,8 +477,10 @@ async function doLookup() {
     var reps     = data.results.filter(r => !r.title || !r.title.toLowerCase().includes('senator'));
     var state    = (senators[0] || reps[0] || {}).state || '';
 
-    var html = '<span class="sec-label">Your Representatives</span>' +
-      '<h2 class="sec-h2">Officials for ZIP code <em>' + zip + '</em>' + (state ? ' — ' + (STATE_NAMES[state]||state) : '') + '</h2>' +
+    var repsLabel = lang==='es' ? 'Tus Representantes' : 'Your Representatives';
+    var forZip = lang==='es' ? 'Funcionarios para el código postal' : 'Officials for ZIP code';
+    var html = '<span class="sec-label">' + repsLabel + '</span>' +
+      '<h2 class="sec-h2">' + forZip + ' <em>' + zip + '</em>' + (state ? ' — ' + (STATE_NAMES[state]||state) : '') + '</h2>' +
       '<div class="reps-grid">';
 
     reps.forEach(r => { html += renderRepCard(r); });
@@ -439,19 +488,23 @@ async function doLookup() {
     if (state && GOVERNORS[state]) html += renderGovCard(state);
 
     html += '</div>';
-    html += '<div style="padding:.875rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--r);font-size:.8rem;color:#92400E;line-height:1.7;">' +
-      '<strong>Study tip:</strong> Write down the names of your two senators, your representative, and your governor on a notecard. Bring it to your interview to review while waiting. The officer may ask any of these three questions.' +
-      '</div>';
+    var studyTip = lang==='es'
+      ? '<strong>Consejo de estudio:</strong> Anota los nombres de tus dos senadores, tu representante y tu gobernador en una tarjeta. Llévala a tu entrevista para repasarlos mientras esperas. El oficial puede preguntarte sobre cualquiera de estas tres preguntas.'
+      : '<strong>Study tip:</strong> Write down the names of your two senators, your representative, and your governor on a notecard. Bring it to your interview to review while waiting. The officer may ask any of these three questions.';
+    html += '<div style="padding:.875rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--r);font-size:.8rem;color:#92400E;line-height:1.7;">' + studyTip + '</div>';
 
     inner.innerHTML = html;
   } catch(e) {
-    inner.innerHTML = '<div class="error-box">' +
-      '<strong>Could not load representative data.</strong>' +
-      'The lookup service may be temporarily unavailable or your ZIP code may not be recognized. You can find your officials directly at:<br><br>' +
-      '• <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a> — Your two US Senators<br>' +
-      '• <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> — Your House Representative<br>' +
-      '• Search "<strong>governor of [your state]</strong>" on Google for the current governor.' +
-    '</div>';
+    var errHtml = lang==='es'
+      ? '<strong>No se pudieron cargar los datos.</strong>El servicio puede estar temporalmente no disponible o tu código postal puede no ser reconocido. Puedes encontrar a tus funcionarios directamente en:<br><br>' +
+        '• <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a> — Tus dos senadores de EE. UU.<br>' +
+        '• <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> — Tu representante de la Cámara<br>' +
+        '• Busca "<strong>gobernador de [tu estado]</strong>" en Google para el gobernador actual.'
+      : '<strong>Could not load representative data.</strong>The lookup service may be temporarily unavailable or your ZIP code may not be recognized. You can find your officials directly at:<br><br>' +
+        '• <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a> — Your two US Senators<br>' +
+        '• <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> — Your House Representative<br>' +
+        '• Search "<strong>governor of [your state]</strong>" on Google for the current governor.';
+    inner.innerHTML = '<div class="error-box">' + errHtml + '</div>';
   }
 }
 
