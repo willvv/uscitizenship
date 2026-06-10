@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Are My Representatives? — US Citizenship Test Prep</title>
+<meta name="description" content="Enter your ZIP code to find your current US Senators, House Representative, and Governor. Essential for USCIS citizenship test questions 20, 23, and 43.">
+<link rel="canonical" href="https://uscitizenship.prepmundo.com/my-reps/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uscitizenship.prepmundo.com/my-reps/">
+<meta property="og:title" content="Who Are My Representatives? — Citizenship Test Prep">
+<meta property="og:description" content="Look up your current US Senators, House Representative, and Governor by ZIP code.">
+<link rel="alternate" hreflang="en" href="https://uscitizenship.prepmundo.com/my-reps/">
+<link rel="alternate" hreflang="x-default" href="https://uscitizenship.prepmundo.com/my-reps/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-USCIT001"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-USCIT001');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894470334861232" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Who Are My Representatives?","url":"https://uscitizenship.prepmundo.com/my-reps/","description":"Enter your ZIP code to find your current US Senators, House Representative, and Governor — required knowledge for the USCIS naturalization civics test.","isPartOf":{"@type":"WebSite","name":"US Citizenship Test Prep","url":"https://uscitizenship.prepmundo.com/"}}
+</script>
+<style>
+:root{
+  --navy:#0B2447;--navy-mid:#1A3B6E;
+  --amber:#F59E0B;--amber-dark:#D97706;--amber-bg:rgba(245,158,11,.1);
+  --green:#10B981;--green-bg:rgba(16,185,129,.1);
+  --red:#EF4444;
+  --surface:#fff;--bg:#F8F7F4;--border:#E5E7EB;--border-mid:rgba(11,36,71,.18);
+  --text:#111827;--muted:#6B7280;
+  --r:8px;--rl:14px;--rxl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem;}
+@media(min-width:768px){.wrap{padding:0 2rem;}}
+button{cursor:pointer;border:none;background:none;font-family:inherit;}
+
+/* ── PREPMUNDO NAV BAR ── */
+.pm-bar{background:#0B2447;border-bottom:1px solid rgba(255,255,255,.08);padding:.55rem 1.25rem;display:flex;align-items:center;justify-content:space-between;}
+.pm-bar-logo{display:flex;align-items:center;gap:.5rem;font-family:'Outfit',sans-serif;font-weight:800;font-size:.88rem;color:#fff;}
+.pm-bar-logo em{font-style:normal;color:var(--amber);}
+.pm-bar-logo svg{flex-shrink:0;}
+.pm-bar-right a{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:.4rem;transition:color .2s;}
+.pm-bar-right a:hover{color:var(--amber);}
+
+/* ── HERO ── */
+.hero{background:var(--navy);padding:4rem 0 3.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,.12) 0%,transparent 65%);pointer-events:none;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.45rem;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.28);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.25rem;}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(1.6);}}
+.hero-eyebrow-text{font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);}
+.hero-h1{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;line-height:1.1;color:#fff;letter-spacing:-.03em;margin-bottom:.9rem;}
+.hero-h1 em{font-style:normal;color:var(--amber);}
+.hero-p{font-size:.97rem;line-height:1.75;color:rgba(255,255,255,.7);max-width:580px;margin-bottom:2rem;}
+
+/* ── ZIP SEARCH ── */
+.zip-form{display:flex;gap:.75rem;flex-wrap:wrap;}
+.zip-input{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;padding:.875rem 1.25rem;border-radius:var(--rl);border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;width:200px;outline:none;transition:border-color .2s;letter-spacing:.05em;}
+.zip-input::placeholder{color:rgba(255,255,255,.35);font-weight:400;}
+.zip-input:focus{border-color:var(--amber);}
+.btn{display:inline-flex;align-items:center;gap:.4rem;font-family:'Outfit',sans-serif;font-weight:700;border-radius:var(--r);transition:all .2s;text-decoration:none;white-space:nowrap;cursor:pointer;}
+.btn-amber{background:var(--amber);color:var(--navy);padding:.875rem 2rem;font-size:.95rem;border:none;}
+.btn-amber:hover{background:var(--amber-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,.35);}
+
+/* ── TEST QUESTIONS BADGE ── */
+.test-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:999px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.25);font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:700;color:var(--amber);letter-spacing:.06em;margin-top:1.5rem;}
+
+/* ── RESULTS SECTION ── */
+.section{padding:3.5rem 0;}
+.section-white{background:#fff;}
+#results-section{display:none;}
+.sec-label{font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:.5rem;}
+.sec-h2{font-family:'Outfit',sans-serif;font-size:clamp(1.4rem,2.8vw,2rem);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.025em;margin-bottom:1.5rem;}
+.sec-h2 em{font-style:normal;color:var(--amber);}
+
+/* ── REP CARDS ── */
+.reps-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2.5rem;}
+@media(min-width:640px){.reps-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.reps-grid{grid-template-columns:repeat(3,1fr);}}
+.rep-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--rl);padding:1.5rem;transition:border-color .2s;position:relative;}
+.rep-card:hover{border-color:var(--border-mid);}
+.rep-role{font-family:'Outfit',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.5rem;}
+.rep-name{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:.35rem;}
+.rep-party{display:inline-flex;align-items:center;gap:.3rem;font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;margin-bottom:.75rem;}
+.party-d{background:rgba(37,99,235,.1);color:#1D4ED8;}
+.party-r{background:rgba(220,38,38,.1);color:#B91C1C;}
+.party-i{background:rgba(107,114,128,.15);color:#374151;}
+.rep-detail{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.25rem;}
+.rep-detail strong{color:var(--text);}
+.rep-link{display:inline-flex;align-items:center;gap:.3rem;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:var(--amber);margin-top:.75rem;transition:color .2s;}
+.rep-link:hover{color:var(--amber-dark);}
+.rep-question-badge{position:absolute;top:1rem;right:1rem;background:var(--navy);color:#fff;font-family:'Outfit',sans-serif;font-size:.6rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em;}
+
+/* Governor card gets full width on its own */
+.rep-card-gov{grid-column:1/-1;}
+@media(min-width:900px){.rep-card-gov{grid-column:auto;}}
+
+/* ── LOADING STATE ── */
+.loading{display:flex;align-items:center;justify-content:center;gap:.75rem;padding:3rem 0;color:var(--muted);font-size:.9rem;}
+.spinner{width:24px;height:24px;border:3px solid var(--border);border-top-color:var(--amber);border-radius:50%;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ── ERROR STATE ── */
+.error-box{padding:1.5rem;border:1.5px solid rgba(239,68,68,.3);border-radius:var(--rl);background:rgba(239,68,68,.05);color:#B91C1C;font-size:.88rem;line-height:1.7;}
+.error-box strong{display:block;margin-bottom:.4rem;}
+.error-box a{color:#B91C1C;text-decoration:underline;}
+
+/* ── WHY SECTION ── */
+.why-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2rem;}
+@media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr 1fr;}}
+.why-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--rl);padding:1.25rem;}
+.why-qnum{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:900;color:var(--amber);line-height:1;margin-bottom:.4rem;}
+.why-q{font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;line-height:1.35;}
+.why-note{font-size:.8rem;color:var(--muted);line-height:1.6;}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:.625rem;max-width:760px;}
+.faq-item{border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.125rem 1.25rem;text-align:left;font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:700;color:var(--navy);}
+.faq-q svg{flex-shrink:0;transition:transform .25s;color:var(--amber);}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:.25rem 1.25rem 1.25rem;font-size:.875rem;line-height:1.75;color:var(--muted);}
+.faq-a-inner a{color:var(--amber);text-decoration:underline;}
+
+/* ── FOOTER ── */
+footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem;font-size:.75rem;}
+.footer-bottom a{color:var(--amber);}
+
+@media(max-width:600px){.section{padding:2.5rem 0;}.zip-input{width:100%;}.zip-form{flex-direction:column;}.btn-amber{width:100%;justify-content:center;}}
+</style>
+</head>
+<body>
+
+<!-- PrepMundo nav bar -->
+<div class="pm-bar">
+  <a href="https://prepmundo.com/" class="pm-bar-logo">
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#F59E0B"/><circle cx="16" cy="16" r="9.5" fill="none" stroke="#0B2447" stroke-width="1.6"/><ellipse cx="16" cy="16" rx="4.2" ry="9.5" fill="none" stroke="#0B2447" stroke-width="1.6"/><line x1="6.5" y1="16" x2="25.5" y2="16" stroke="#0B2447" stroke-width="1.6"/><line x1="8" y1="11.2" x2="24" y2="11.2" stroke="#0B2447" stroke-width="1.2"/><line x1="8" y1="20.8" x2="24" y2="20.8" stroke="#0B2447" stroke-width="1.2"/></svg>
+    <span><em>Prep</em>Mundo</span>
+  </a>
+  <div class="pm-bar-right">
+    <a href="index.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      Back to Citizenship Prep
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      <span class="hero-eyebrow-text">Citizenship Test · Questions 20, 23 &amp; 43</span>
+    </div>
+    <h1 class="hero-h1">Who are <em>my representatives?</em></h1>
+    <p class="hero-p">Three civics test questions ask about YOUR specific officials — not a fixed answer. Enter your ZIP code to find your current US Senators, House Representative, and Governor right now.</p>
+
+    <div class="zip-form">
+      <input class="zip-input" type="text" id="zip-input" placeholder="ZIP code" maxlength="5" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+      <button class="btn btn-amber" onclick="doLookup()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Look up
+      </button>
+    </div>
+
+    <div class="test-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Answers to Test Questions 20, 23, and 43 are based on your state and district
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<div id="results-section" class="section section-white">
+  <div class="wrap">
+    <div id="results-inner"></div>
+  </div>
+</div>
+
+<!-- WHY THIS MATTERS -->
+<div class="section">
+  <div class="wrap">
+    <span class="sec-label">Citizenship Test Connection</span>
+    <h2 class="sec-h2">Three test questions have <em>no fixed answer</em></h2>
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.75;max-width:640px;">The USCIS officer expects answers about your current officials — not historical figures. These three questions change with every election, so you need to know your local officials on interview day.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-qnum">Q20</div>
+        <div class="why-q">Who is one of your state's U.S. Senators now?</div>
+        <div class="why-note">You have two US Senators. Know either name. The officer may ask for one. Senators serve 6-year terms and are elected statewide.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-qnum">Q23</div>
+        <div class="why-q">Name your U.S. Representative.</div>
+        <div class="why-note">Your House Representative is elected by your specific congressional district — which is why the answer depends on your ZIP code. Representatives serve 2-year terms.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-qnum">Q43</div>
+        <div class="why-q">Who is the Governor of your state now?</div>
+        <div class="why-note">Every state has a Governor elected by that state's voters. This is a 65+ exemption question too — marked with a star in the senior study set.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section section-white">
+  <div class="wrap">
+    <span class="sec-label">Common Questions</span>
+    <h2 class="sec-h2">About the <em>representatives questions</em></h2>
+    <div class="faq-list">
+      <div class="faq-item" id="faq-0">
+        <button class="faq-q" onclick="toggleFaq(0)">Do I need to know the party of my representative?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">No. The USCIS officer only asks for the name, not the political party. Just know the full name of one of your senators (for Q20), the name of your House representative (for Q23), and the name of your governor (for Q43).</div></div>
+      </div>
+      <div class="faq-item" id="faq-1">
+        <button class="faq-q" onclick="toggleFaq(1)">What if there was a recent election and the officials changed?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Always give the answer that is current on the day of your interview. If there was an election between when you filed and when you interviewed, give the name of whoever took office. The USCIS officer knows the current officials and will accept any correct answer as of that day.</div></div>
+      </div>
+      <div class="faq-item" id="faq-2">
+        <button class="faq-q" onclick="toggleFaq(2)">How do I find my congressional district?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Your congressional district is determined by your home address. Every 10 years after the census, district lines are redrawn based on population changes. You can always look up your representative on <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> using your ZIP code.</div></div>
+      </div>
+      <div class="faq-item" id="faq-3">
+        <button class="faq-q" onclick="toggleFaq(3)">Is the governor question only for 65+ applicants?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">No — all applicants can be asked about their governor (Q43). However, the governor question is one of the specially marked questions that applicants 65 or older who have held a green card for 20+ years are required to study. For those applicants, it is a guaranteed question in the 20-question subset.</div></div>
+      </div>
+      <div class="faq-item" id="faq-4">
+        <button class="faq-q" onclick="toggleFaq(4)">What if I moved to a different state recently?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Answer based on where you currently live at the time of the interview, not where you lived when you filed. If you recently moved, make sure to update your USCIS case with your new address, and study the officials for your new state and district.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 PrepMundo. All rights reserved.</span>
+      <span>Data for senators and representatives is pulled live via <a href="https://whoismyrepresentative.com" target="_blank" rel="noopener">whoismyrepresentative.com</a>. Verify current information at <a href="https://www.uscis.gov" target="_blank" rel="noopener">uscis.gov</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── GOVERNOR DATA ── (as of mid-2025)
+var GOVERNORS = {
+  AL:{name:'Kay Ivey',party:'R',url:'https://governor.alabama.gov'},
+  AK:{name:'Mike Dunleavy',party:'R',url:'https://gov.alaska.gov'},
+  AZ:{name:'Katie Hobbs',party:'D',url:'https://azgovernor.gov'},
+  AR:{name:'Sarah Huckabee Sanders',party:'R',url:'https://governor.arkansas.gov'},
+  CA:{name:'Gavin Newsom',party:'D',url:'https://www.gov.ca.gov'},
+  CO:{name:'Jared Polis',party:'D',url:'https://www.colorado.gov/governor'},
+  CT:{name:'Ned Lamont',party:'D',url:'https://portal.ct.gov/governor'},
+  DE:{name:'Matt Meyer',party:'D',url:'https://governor.delaware.gov'},
+  FL:{name:'Ron DeSantis',party:'R',url:'https://www.flgov.com'},
+  GA:{name:'Brian Kemp',party:'R',url:'https://gov.georgia.gov'},
+  HI:{name:'Josh Green',party:'D',url:'https://governor.hawaii.gov'},
+  ID:{name:'Brad Little',party:'R',url:'https://gov.idaho.gov'},
+  IL:{name:'JB Pritzker',party:'D',url:'https://www2.illinois.gov/gov'},
+  IN:{name:'Mike Braun',party:'R',url:'https://www.in.gov/gov'},
+  IA:{name:'Kim Reynolds',party:'R',url:'https://governor.iowa.gov'},
+  KS:{name:'Laura Kelly',party:'D',url:'https://governor.kansas.gov'},
+  KY:{name:'Andy Beshear',party:'D',url:'https://governor.ky.gov'},
+  LA:{name:'Jeff Landry',party:'R',url:'https://gov.louisiana.gov'},
+  ME:{name:'Janet Mills',party:'D',url:'https://www.maine.gov/governor'},
+  MD:{name:'Wes Moore',party:'D',url:'https://governor.maryland.gov'},
+  MA:{name:'Maura Healey',party:'D',url:'https://www.mass.gov/governor'},
+  MI:{name:'Gretchen Whitmer',party:'D',url:'https://www.michigan.gov/whitmer'},
+  MN:{name:'Tim Walz',party:'D',url:'https://mn.gov/governor'},
+  MS:{name:'Tate Reeves',party:'R',url:'https://www.governorreeves.ms.gov'},
+  MO:{name:'Mike Kehoe',party:'R',url:'https://governor.mo.gov'},
+  MT:{name:'Greg Gianforte',party:'R',url:'https://governor.mt.gov'},
+  NE:{name:'Jim Pillen',party:'R',url:'https://governor.nebraska.gov'},
+  NV:{name:'Joe Lombardo',party:'R',url:'https://gov.nv.gov'},
+  NH:{name:'Kelly Ayotte',party:'R',url:'https://www.governor.nh.gov'},
+  NJ:{name:'Phil Murphy',party:'D',url:'https://www.nj.gov/governor'},
+  NM:{name:'Michelle Lujan Grisham',party:'D',url:'https://www.governor.state.nm.us'},
+  NY:{name:'Kathy Hochul',party:'D',url:'https://www.governor.ny.gov'},
+  NC:{name:'Josh Stein',party:'D',url:'https://governor.nc.gov'},
+  ND:{name:'Kelly Armstrong',party:'R',url:'https://www.governor.nd.gov'},
+  OH:{name:'Mike DeWine',party:'R',url:'https://governor.ohio.gov'},
+  OK:{name:'Kevin Stitt',party:'R',url:'https://www.governor.ok.gov'},
+  OR:{name:'Tina Kotek',party:'D',url:'https://www.oregon.gov/gov'},
+  PA:{name:'Josh Shapiro',party:'D',url:'https://www.governor.pa.gov'},
+  RI:{name:'Dan McKee',party:'D',url:'https://governor.ri.gov'},
+  SC:{name:'Henry McMaster',party:'R',url:'https://governor.sc.gov'},
+  SD:{name:'Tony Venhuizen',party:'R',url:'https://news.sd.gov/governor'},
+  TN:{name:'Bill Lee',party:'R',url:'https://www.tn.gov/governor'},
+  TX:{name:'Greg Abbott',party:'R',url:'https://gov.texas.gov'},
+  UT:{name:'Spencer Cox',party:'R',url:'https://governor.utah.gov'},
+  VT:{name:'Phil Scott',party:'R',url:'https://governor.vermont.gov'},
+  VA:{name:'Glenn Youngkin',party:'R',url:'https://www.governor.virginia.gov'},
+  WA:{name:'Bob Ferguson',party:'D',url:'https://www.governor.wa.gov'},
+  WV:{name:'Patrick Morrisey',party:'R',url:'https://governor.wv.gov'},
+  WI:{name:'Tony Evers',party:'D',url:'https://www.evers.wi.gov'},
+  WY:{name:'Mark Gordon',party:'R',url:'https://governor.wyo.gov'}
+};
+
+var STATE_NAMES = {
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',
+  CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',
+  IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',
+  ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',
+  MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',
+  NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',
+  OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',
+  SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',
+  WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'
+};
+
+function partyClass(p) {
+  if (!p) return 'party-i';
+  var u = p.toUpperCase();
+  if (u.includes('DEM') || u === 'D') return 'party-d';
+  if (u.includes('REP') || u === 'R') return 'party-r';
+  return 'party-i';
+}
+function partyLabel(p) {
+  if (!p) return 'Independent';
+  var u = p.toUpperCase();
+  if (u.includes('DEM') || u === 'D') return 'Democrat';
+  if (u.includes('REP') || u === 'R') return 'Republican';
+  return p;
+}
+
+function renderGovCard(state) {
+  var g = GOVERNORS[state];
+  if (!g) return '';
+  return '<div class="rep-card rep-card-gov">' +
+    '<span class="rep-question-badge">Q43 · 65+</span>' +
+    '<span class="rep-role">Governor · ' + (STATE_NAMES[state] || state) + '</span>' +
+    '<div class="rep-name">' + g.name + '</div>' +
+    '<span class="rep-party ' + partyClass(g.party) + '">' + partyLabel(g.party) + '</span>' +
+    '<div class="rep-detail" style="margin-top:.25rem;">State of ' + (STATE_NAMES[state] || state) + '</div>' +
+    '<a class="rep-link" href="' + g.url + '" target="_blank" rel="noopener">' +
+      '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' +
+      "Governor's official site" +
+    '</a>' +
+  '</div>';
+}
+
+function renderRepCard(rep) {
+  var isSenator = rep.title && rep.title.toLowerCase().includes('senator');
+  var qBadge = isSenator ? 'Q20' : 'Q23';
+  return '<div class="rep-card">' +
+    '<span class="rep-question-badge">' + qBadge + '</span>' +
+    '<span class="rep-role">' + (rep.title || (isSenator?'US Senator':'US Representative')) + (rep.state ? ' · ' + (STATE_NAMES[rep.state] || rep.state) : '') + ((!isSenator && rep.district) ? ' District ' + rep.district : '') + '</span>' +
+    '<div class="rep-name">' + (rep.name || '—') + '</div>' +
+    (rep.party ? '<span class="rep-party ' + partyClass(rep.party) + '">' + partyLabel(rep.party) + '</span>' : '') +
+    (rep.phone ? '<div class="rep-detail"><strong>Phone:</strong> ' + rep.phone + '</div>' : '') +
+    (rep.office ? '<div class="rep-detail"><strong>Office:</strong> ' + rep.office + '</div>' : '') +
+    (rep.link ? '<a class="rep-link" href="' + rep.link + '" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Official website</a>' : '') +
+  '</div>';
+}
+
+async function doLookup() {
+  var zip = document.getElementById('zip-input').value.trim().replace(/\D/g,'');
+  if (zip.length !== 5) {
+    document.getElementById('zip-input').focus();
+    document.getElementById('zip-input').style.borderColor = 'rgba(239,68,68,.8)';
+    setTimeout(()=>{ document.getElementById('zip-input').style.borderColor = ''; }, 1500);
+    return;
+  }
+  var section = document.getElementById('results-section');
+  var inner = document.getElementById('results-inner');
+  section.style.display = 'block';
+  inner.innerHTML = '<div class="loading"><div class="spinner"></div><span>Looking up ZIP ' + zip + '…</span></div>';
+  section.scrollIntoView({behavior:'smooth', block:'start'});
+
+  try {
+    var url = 'https://whoismyrepresentative.com/getall_mems.php?zip=' + zip + '&output=json';
+    var resp = await fetch(url);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    var data = await resp.json();
+    if (!data.results || !data.results.length) throw new Error('No results');
+
+    var senators = data.results.filter(r => r.title && r.title.toLowerCase().includes('senator'));
+    var reps     = data.results.filter(r => !r.title || !r.title.toLowerCase().includes('senator'));
+    var state    = (senators[0] || reps[0] || {}).state || '';
+
+    var html = '<span class="sec-label">Your Representatives</span>' +
+      '<h2 class="sec-h2">Officials for ZIP code <em>' + zip + '</em>' + (state ? ' — ' + (STATE_NAMES[state]||state) : '') + '</h2>' +
+      '<div class="reps-grid">';
+
+    reps.forEach(r => { html += renderRepCard(r); });
+    senators.forEach(r => { html += renderRepCard(r); });
+    if (state && GOVERNORS[state]) html += renderGovCard(state);
+
+    html += '</div>';
+    html += '<div style="padding:.875rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--r);font-size:.8rem;color:#92400E;line-height:1.7;">' +
+      '<strong>Study tip:</strong> Write down the names of your two senators, your representative, and your governor on a notecard. Bring it to your interview to review while waiting. The officer may ask any of these three questions.' +
+      '</div>';
+
+    inner.innerHTML = html;
+  } catch(e) {
+    inner.innerHTML = '<div class="error-box">' +
+      '<strong>Could not load representative data.</strong>' +
+      'The lookup service may be temporarily unavailable or your ZIP code may not be recognized. You can find your officials directly at:<br><br>' +
+      '• <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a> — Your two US Senators<br>' +
+      '• <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> — Your House Representative<br>' +
+      '• Search "<strong>governor of [your state]</strong>" on Google for the current governor.' +
+    '</div>';
+  }
+}
+
+document.getElementById('zip-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doLookup();
+});
+
+// Auto-fill from URL param: ?zip=10001
+(function() {
+  var p = new URLSearchParams(window.location.search);
+  var z = p.get('zip');
+  if (z && /^\d{5}$/.test(z)) {
+    document.getElementById('zip-input').value = z;
+    doLookup();
+  }
+})();
+
+function toggleFaq(i) {
+  var item = document.getElementById('faq-' + i);
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
