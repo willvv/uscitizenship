@@ -422,6 +422,7 @@ function showTab(id) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+  document.querySelector('.tabs-bar').scrollIntoView({behavior:'smooth'});
 }
 
 // ── QUESTIONS DATA ──
