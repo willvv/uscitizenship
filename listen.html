@@ -222,31 +222,31 @@ try { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; } c
 
 // ── AUDIO EPISODES ──
 var EPISODES = [
-  {num:1, en_title:'Principles of American Democracy', es_title:'Principios de la Democracia Americana',
+  {num:1, available:false, en_title:'Principles of American Democracy', es_title:'Principios de la Democracia Americana',
    en_desc:'Questions 1–12. Covers the Constitution, the Bill of Rights, the Declaration of Independence, and the foundations of American government.',
    es_desc:'Preguntas 1–12. Cubre la Constitución, la Declaración de Derechos, la Declaración de Independencia y las bases del gobierno americano.',
    en_qs:'Questions 1–12', es_qs:'Preguntas 1–12', file:'audio/ep1-american-democracy.mp3'},
-  {num:2, en_title:'System of Government', es_title:'Sistema de Gobierno',
+  {num:2, available:false, en_title:'System of Government', es_title:'Sistema de Gobierno',
    en_desc:'Questions 13–47. The three branches, Congress, the President, the Supreme Court, political parties, and state governments.',
    es_desc:'Preguntas 13–47. Las tres ramas, el Congreso, el Presidente, la Corte Suprema, los partidos políticos y los gobiernos estatales.',
    en_qs:'Questions 13–47', es_qs:'Preguntas 13–47', file:'audio/ep2-system-of-government.mp3'},
-  {num:3, en_title:'Rights and Responsibilities', es_title:'Derechos y Responsabilidades',
+  {num:3, available:false, en_title:'Rights and Responsibilities', es_title:'Derechos y Responsabilidades',
    en_desc:'Questions 48–57. Voting rights, citizens\' unique rights, responsibilities like taxes and Selective Service registration.',
    es_desc:'Preguntas 48–57. Derechos de voto, derechos exclusivos de ciudadanos, responsabilidades como impuestos y el Servicio Selectivo.',
    en_qs:'Questions 48–57', es_qs:'Preguntas 48–57', file:'audio/ep3-rights-responsibilities.mp3'},
-  {num:4, en_title:'Colonial Period and Independence', es_title:'Período Colonial e Independencia',
+  {num:4, available:false, en_title:'Colonial Period and Independence', es_title:'Período Colonial e Independencia',
    en_desc:'Questions 58–70. Why colonists came to America, the Declaration of Independence, the Constitutional Convention, and the Founding Fathers.',
    es_desc:'Preguntas 58–70. Por qué llegaron los colonizadores a América, la Declaración de Independencia, la Convención Constitucional y los Padres Fundadores.',
    en_qs:'Questions 58–70', es_qs:'Preguntas 58–70', file:'audio/ep4-colonial-independence.mp3'},
-  {num:5, en_title:'American History: The 1800s', es_title:'Historia Americana: El Siglo XIX',
+  {num:5, available:false, en_title:'American History: The 1800s', es_title:'Historia Americana: El Siglo XIX',
    en_desc:'Questions 71–77. The Louisiana Purchase, the Civil War, Abraham Lincoln, the Emancipation Proclamation, and Susan B. Anthony.',
    es_desc:'Preguntas 71–77. La Compra de Luisiana, la Guerra Civil, Abraham Lincoln, la Proclamación de Emancipación y Susan B. Anthony.',
    en_qs:'Questions 71–77', es_qs:'Preguntas 71–77', file:'audio/ep5-1800s.mp3'},
-  {num:6, en_title:'Recent American History', es_title:'Historia Americana Reciente',
+  {num:6, available:false, en_title:'Recent American History', es_title:'Historia Americana Reciente',
    en_desc:'Questions 78–87. The World Wars, the Cold War, the civil rights movement, Martin Luther King Jr., and September 11.',
    es_desc:'Preguntas 78–87. Las Guerras Mundiales, la Guerra Fría, el movimiento de derechos civiles, Martin Luther King Jr. y el 11 de septiembre.',
    en_qs:'Questions 78–87', es_qs:'Preguntas 78–87', file:'audio/ep6-recent-history.mp3'},
-  {num:7, en_title:'Geography, Symbols & Holidays', es_title:'Geografía, Símbolos y Feriados',
+  {num:7, available:false, en_title:'Geography, Symbols & Holidays', es_title:'Geografía, Símbolos y Feriados',
    en_desc:'Questions 88–100. US rivers, oceans, territories, bordering countries, the flag, the national anthem, and national holidays.',
    es_desc:'Preguntas 88–100. Ríos, océanos, territorios, países fronterizos, la bandera, el himno nacional y los feriados nacionales.',
    en_qs:'Questions 88–100', es_qs:'Preguntas 88–100', file:'audio/ep7-geography-symbols-holidays.mp3'}
@@ -254,10 +254,15 @@ var EPISODES = [
 
 function renderEpisodes() {
   var list = document.getElementById('episodes-list');
+  var cs = lang==='es' ? 'Episodio próximamente — el archivo de audio se añadirá en breve.' : 'Episode coming soon — audio will be added shortly.';
+  var csIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
   list.innerHTML = EPISODES.map(ep => {
     var title = lang==='es' ? ep.es_title : ep.en_title;
     var desc  = lang==='es' ? ep.es_desc  : ep.en_desc;
     var qs    = lang==='es' ? ep.es_qs    : ep.en_qs;
+    var player = ep.available
+      ? '<div class="ep-player"><audio controls preload="none" style="width:100%"><source src="' + ep.file + '" type="audio/mpeg"></audio></div>'
+      : '<div class="ep-coming">' + csIcon + cs + '</div>';
     return '<div class="episode-card">' +
       '<div class="ep-header">' +
         '<span class="ep-num">Ep ' + ep.num + '</span>' +
@@ -267,11 +272,7 @@ function renderEpisodes() {
           '<div class="ep-questions">' + qs + '</div>' +
         '</div>' +
       '</div>' +
-      '<div class="ep-player">' +
-        '<audio controls preload="none" style="width:100%" onerror="this.parentNode.innerHTML=\'<div class=ep-coming><svg width=16 height=16 viewBox=\\\"0 0 24 24\\\" fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=12 r=10/><line x1=12 y1=8 x2=12 y2=12/><line x1=12 y1=16 x2=12.01 y2=16/></svg>' + (lang==='es'?'Episodio próximamente — el archivo de audio se añadirá en breve.':'Episode coming soon — the audio file will be added shortly.') + '</div>\'">' +
-          '<source src="' + ep.file + '" type="audio/mpeg">' +
-        '</audio>' +
-      '</div>' +
+      player +
     '</div>';
   }).join('');
 }

@@ -72,6 +72,15 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .sec-h2 em{font-style:normal;color:var(--amber);}
 .sec-p{font-size:.9rem;line-height:1.75;color:var(--muted);max-width:580px;}
 
+/* ── TEST INFO STRIP ── */
+.test-strip{background:var(--navy);padding:1.25rem 0;}
+.test-stats{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;}
+.test-stat-item{display:flex;align-items:baseline;gap:.45rem;}
+.test-stat-num{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:900;color:#fff;line-height:1;}
+.test-stat-lbl{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:500;}
+.test-stat-div{width:1px;height:1.75rem;background:rgba(255,255,255,.15);flex-shrink:0;}
+@media(max-width:600px){.test-stat-div{display:none;}.test-stats{gap:1rem 2rem;}}
+
 /* ── STUDY SECTION ── */
 .category-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.75rem 0 2rem;}
 .cat-pill{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:999px;border:1.5px solid var(--border);color:var(--muted);transition:all .2s;}
@@ -158,6 +167,33 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span data-en="My Reps" data-es="Mis Reps">My Reps</span>
     </a>
+  </div>
+</div>
+
+<!-- TEST INFO STRIP -->
+<div class="test-strip">
+  <div class="wrap">
+    <div class="test-stats">
+      <div class="test-stat-item">
+        <span class="test-stat-num">100</span>
+        <span class="test-stat-lbl" data-en="Official questions" data-es="Preguntas oficiales">Official questions</span>
+      </div>
+      <div class="test-stat-div"></div>
+      <div class="test-stat-item">
+        <span class="test-stat-num">20</span>
+        <span class="test-stat-lbl" data-en="Asked in 2025 format" data-es="Preguntas en formato 2025">Asked in 2025 format</span>
+      </div>
+      <div class="test-stat-div"></div>
+      <div class="test-stat-item">
+        <span class="test-stat-num">12/20</span>
+        <span class="test-stat-lbl" data-en="Correct to pass (60%)" data-es="Correctas para aprobar (60%)">Correct to pass (60%)</span>
+      </div>
+      <div class="test-stat-div"></div>
+      <div class="test-stat-item">
+        <span class="test-stat-num" style="color:#A78BFA;">★</span>
+        <span class="test-stat-lbl" data-en="Required for 65+ applicants" data-es="Obligatorias para solicitantes 65+">Required for 65+ applicants</span>
+      </div>
+    </div>
   </div>
 </div>
 
