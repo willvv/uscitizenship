@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uscitizenship.prepmundo.com/sitemap.xml
