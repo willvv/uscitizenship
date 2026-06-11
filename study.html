@@ -311,7 +311,11 @@ function applyLang() {
   });
   renderStudy();
 }
-try { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; } catch(e) {}
+try {
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'es') { lang = urlLang; localStorage.setItem('usc-lang', urlLang); }
+  else { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; }
+} catch(e) {}
 
 // ── QUESTIONS DATA ──
 // format: [id, q_en, a_en, extra_en, q_es, a_es, senior_flag (0/1)]

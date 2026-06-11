@@ -338,7 +338,13 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
 
 <script>
 // ── LANGUAGE ──
-var lang = localStorage.getItem('usc-lang') || 'en';
+var lang = (function() {
+  try {
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang === 'en' || urlLang === 'es') { localStorage.setItem('usc-lang', urlLang); return urlLang; }
+    return localStorage.getItem('usc-lang') || 'en';
+  } catch(e) { return 'en'; }
+})();
 
 function setLang(l) {
   lang = l;

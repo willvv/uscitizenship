@@ -308,7 +308,11 @@ function applyLang() {
   });
   renderCards();
 }
-try { var _s = localStorage.getItem('usc-lang'); if (_s) lang = _s; } catch(e) {}
+try {
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'es') { lang = urlLang; localStorage.setItem('usc-lang', urlLang); }
+  else { var _s = localStorage.getItem('usc-lang'); if (_s) lang = _s; }
+} catch(e) {}
 
 function ic(svg, txt) { return '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">' + svg + '</svg>' + txt; }
 

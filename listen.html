@@ -226,7 +226,11 @@ function applyLang() {
   });
   renderEpisodes();
 }
-try { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; } catch(e) {}
+try {
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'es') { lang = urlLang; localStorage.setItem('usc-lang', urlLang); }
+  else { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; }
+} catch(e) {}
 
 // ── AUDIO EPISODES ──
 var EPISODES = [
