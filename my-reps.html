@@ -115,6 +115,31 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .error-box strong{display:block;margin-bottom:.4rem;}
 .error-box a{color:#B91C1C;text-decoration:underline;}
 
+/* ── CAUTION BANNER ── */
+.caution{display:flex;gap:.85rem;align-items:flex-start;padding:1.1rem 1.25rem;border:1.5px solid var(--amber-dark);background:var(--amber-bg);border-radius:var(--rl);margin-bottom:1.75rem;}
+.caution svg{flex-shrink:0;color:var(--amber-dark);margin-top:.15rem;}
+.caution-text{font-size:.84rem;line-height:1.65;color:#92400E;}
+.caution-text strong{display:block;font-family:'Outfit',sans-serif;font-size:.95rem;color:var(--navy);margin-bottom:.25rem;}
+.caution-text a{color:var(--amber-dark);font-weight:700;text-decoration:underline;}
+
+/* ── OFFICIAL TOOLS ── */
+.official-block{margin-bottom:2.5rem;}
+.official-head{font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:.4rem;margin-bottom:.85rem;}
+.official-embed{border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;background:#fff;}
+.official-embed-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;padding:.75rem 1rem;border-bottom:1px solid var(--border);background:var(--bg);}
+.official-embed-bar span{font-family:'Outfit',sans-serif;font-weight:700;font-size:.82rem;color:var(--navy);display:flex;align-items:center;gap:.4rem;}
+.official-embed iframe{width:100%;height:540px;border:0;display:block;background:#fff;}
+.official-note{font-size:.76rem;color:var(--muted);padding:.7rem 1rem;line-height:1.6;border-top:1px solid var(--border);background:var(--bg);}
+.btn-open{display:inline-flex;align-items:center;gap:.35rem;background:var(--navy);color:#fff;padding:.5rem 1rem;border-radius:var(--r);font-family:'Outfit',sans-serif;font-weight:700;font-size:.76rem;white-space:nowrap;}
+.btn-open:hover{background:var(--navy-mid);}
+.official-links{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.25rem;}
+@media(min-width:640px){.official-links{grid-template-columns:1fr 1fr;}}
+
+/* ── UNOFFICIAL QUICK REFERENCE ── */
+.unofficial-ref{margin-top:.5rem;}
+.unofficial-tag{display:inline-flex;align-items:center;gap:.35rem;font-family:'Outfit',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:.25rem .6rem;border-radius:999px;margin-bottom:.65rem;}
+.quick-note{font-size:.8rem;line-height:1.65;color:#92400E;background:var(--amber-bg);border:1px solid rgba(245,158,11,.3);border-radius:var(--r);padding:.7rem .9rem;margin-bottom:1rem;}
+
 /* ── WHY SECTION ── */
 .why-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2rem;}
 @media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr 1fr;}}
@@ -304,7 +329,7 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
   <div class="wrap">
     <div class="footer-bottom">
       <span data-en="© 2026 PrepMundo. All rights reserved." data-es="© 2026 PrepMundo. Todos los derechos reservados.">© 2026 PrepMundo. All rights reserved.</span>
-      <span data-en="Data for senators and representatives is pulled live via <a href=&quot;https://whoismyrepresentative.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>whoismyrepresentative.com</a>. Verify current information at <a href=&quot;https://www.uscis.gov&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>uscis.gov</a>." data-es="Los datos de senadores y representantes se obtienen en tiempo real de <a href=&quot;https://whoismyrepresentative.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>whoismyrepresentative.com</a>. Verifica la información actual en <a href=&quot;https://www.uscis.gov&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>uscis.gov</a>.">Data for senators and representatives is pulled live via <a href="https://whoismyrepresentative.com" target="_blank" rel="noopener">whoismyrepresentative.com</a>. Verify current information at <a href="https://www.uscis.gov" target="_blank" rel="noopener">uscis.gov</a>.</span>
+      <span data-en="Always confirm your current officials at the official government sources — <a href=&quot;https://www.house.gov/representatives/find-your-representative&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>house.gov</a> and <a href=&quot;https://www.senate.gov/senators/index.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>senate.gov</a>. The ZIP quick reference is an unofficial study aid and may be out of date." data-es="Confirma siempre tus funcionarios actuales en las fuentes oficiales del gobierno — <a href=&quot;https://www.house.gov/representatives/find-your-representative&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>house.gov</a> y <a href=&quot;https://www.senate.gov/senators/index.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>senate.gov</a>. La referencia rápida por código postal es una ayuda de estudio no oficial y puede estar desactualizada.">Always confirm your current officials at the official government sources — <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> and <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a>. The ZIP quick reference is an unofficial study aid and may be out of date.</span>
     </div>
   </div>
 </footer>
@@ -456,6 +481,61 @@ function renderRepCard(rep) {
   '</div>';
 }
 
+// ── ICONS ──
+var ICO_WARN = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
+var ICO_EXT  = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+var ICO_CHECK= '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+var ICO_INFO = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+
+var HOUSE_URL  = 'https://www.house.gov/representatives/find-your-representative';
+var SENATE_URL = 'https://www.senate.gov/senators/index.htm';
+
+// Persistent caution banner — shown on EVERY lookup, success or not.
+function buildCaution() {
+  var es = lang === 'es';
+  var title = es ? 'Verifica siempre con la fuente oficial' : 'Always verify with the official source';
+  var body = es
+    ? 'Los funcionarios pueden cambiar en cualquier momento por elecciones, renuncias o nombramientos. Esta página es solo una ayuda de estudio — confirma tus funcionarios actuales con las herramientas oficiales del gobierno de EE. UU. a continuación, y en <a href="' + HOUSE_URL + '" target="_blank" rel="noopener">house.gov</a> y <a href="' + SENATE_URL + '" target="_blank" rel="noopener">senate.gov</a>, antes de tu entrevista.'
+    : 'Officials can change at any time due to elections, resignations, or appointments. This page is a study aid only — always confirm your current officials with the official U.S. government tools below, and at <a href="' + HOUSE_URL + '" target="_blank" rel="noopener">house.gov</a> and <a href="' + SENATE_URL + '" target="_blank" rel="noopener">senate.gov</a>, before your interview.';
+  return '<div class="caution">' + ICO_WARN + '<div class="caution-text"><strong>' + title + '</strong>' + body + '</div></div>';
+}
+
+// Official, address-based House finder embedded from house.gov, with a guaranteed
+// fallback button in case the browser blocks the embed (X-Frame-Options).
+function buildHouseEmbed() {
+  var es = lang === 'es';
+  var barTitle = es ? 'Tu Representante (Q23) · búsqueda oficial por dirección' : 'Your Representative (Q23) · official address lookup';
+  var openLbl  = es ? 'Abrir en una pestaña nueva' : 'Open in a new tab';
+  var note = es
+    ? 'Si el formulario oficial no aparece arriba, tu navegador puede estar bloqueando el contenido incrustado — usa el botón para abrirlo directamente en house.gov. Tu representante depende de tu <strong>dirección completa</strong>, no solo del código postal, por eso un código postal puede mostrar más de un distrito.'
+    : 'If the official form doesn’t appear above, your browser may be blocking the embedded content — use the button to open it directly on house.gov. Your representative depends on your <strong>full street address</strong>, not just your ZIP code, which is why a single ZIP can map to more than one district.';
+  return '<div class="official-embed">' +
+    '<div class="official-embed-bar"><span>' + ICO_CHECK + barTitle + '</span>' +
+      '<a class="btn-open" href="' + HOUSE_URL + '" target="_blank" rel="noopener">' + ICO_EXT + openLbl + '</a></div>' +
+    '<iframe src="' + HOUSE_URL + '" title="House.gov — Find Your Representative" loading="lazy" referrerpolicy="no-referrer"></iframe>' +
+    '<div class="official-note">' + note + '</div>' +
+  '</div>';
+}
+
+// Senators (Q20) — always point at the authoritative Senate site rather than asserting
+// names we'd have to keep current (the old data source still listed a senator who resigned).
+function buildSenatorsCard(state) {
+  var es = lang === 'es';
+  var sn = STATE_NAMES[state] || '';
+  var role = es ? 'Tus Senadores de EE. UU.' : 'Your U.S. Senators';
+  var forState = sn ? ' · ' + sn : '';
+  var desc = es
+    ? 'Cada estado tiene dos senadores de EE. UU. Consulta los actuales' + (sn ? ' de ' + sn : ' de tu estado') + ' en el sitio oficial del Senado.'
+    : 'Each state has two U.S. Senators. See the current senators' + (sn ? ' for ' + sn : ' for your state') + ' on the official Senate website.';
+  var lbl = es ? 'Ver en senate.gov' : 'View on senate.gov';
+  return '<div class="rep-card">' +
+    '<span class="rep-question-badge">Q20</span>' +
+    '<span class="rep-role">' + role + forState + '</span>' +
+    '<div class="rep-detail" style="margin:.4rem 0 .25rem;">' + desc + '</div>' +
+    '<a class="rep-link" href="' + SENATE_URL + '" target="_blank" rel="noopener">' + ICO_EXT + lbl + '</a>' +
+  '</div>';
+}
+
 async function doLookup() {
   var zip = document.getElementById('zip-input').value.trim().replace(/\D/g,'');
   if (zip.length !== 5) {
@@ -466,50 +546,62 @@ async function doLookup() {
   }
   var section = document.getElementById('results-section');
   var inner = document.getElementById('results-inner');
+  var es = lang === 'es';
   section.style.display = 'block';
-  inner.innerHTML = '<div class="loading"><div class="spinner"></div><span>' + (lang==='es' ? 'Buscando el código postal ' : 'Looking up ZIP ') + zip + '…</span></div>';
+  inner.innerHTML = '<div class="loading"><div class="spinner"></div><span>' + (es ? 'Buscando el código postal ' : 'Looking up ZIP ') + zip + '…</span></div>';
   section.scrollIntoView({behavior:'smooth', block:'start'});
 
+  // The convenience ZIP lookup only suggests House reps. Senators and the governor come
+  // from authoritative sources, never from the third-party feed (which went stale).
+  var state = '';
+  var reps = [];
   try {
-    var url = 'https://reps-proxy.willvv.workers.dev?zip=' + zip;
-    var resp = await fetch(url);
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    var data = await resp.json();
-    if (!data.results || !data.results.length) throw new Error('No results');
+    var resp = await fetch('https://reps-proxy.willvv.workers.dev?zip=' + zip);
+    if (resp.ok) {
+      var data = await resp.json();
+      if (data.results && data.results.length) {
+        reps  = data.results.filter(r => !r.title || !r.title.toLowerCase().includes('senator'));
+        state = (data.results[0] || {}).state || '';
+      }
+    }
+  } catch(e) { /* official tools below don't depend on this — degrade gracefully */ }
 
-    var senators = data.results.filter(r => r.title && r.title.toLowerCase().includes('senator'));
-    var reps     = data.results.filter(r => !r.title || !r.title.toLowerCase().includes('senator'));
-    var state    = (senators[0] || reps[0] || {}).state || '';
+  var forZip = es ? 'Funcionarios para el código postal' : 'Officials for ZIP code';
+  var officialHead = es ? 'Fuentes oficiales del gobierno' : 'Official government sources';
 
-    var repsLabel = lang==='es' ? 'Tus Representantes' : 'Your Representatives';
-    var forZip = lang==='es' ? 'Funcionarios para el código postal' : 'Officials for ZIP code';
-    var html = '<span class="sec-label">' + repsLabel + '</span>' +
-      '<h2 class="sec-h2">' + forZip + ' <em>' + zip + '</em>' + (state ? ' — ' + (STATE_NAMES[state]||state) : '') + '</h2>' +
-      '<div class="reps-grid">';
+  var html = '<span class="sec-label">' + (es ? 'Tus Funcionarios' : 'Your Officials') + '</span>' +
+    '<h2 class="sec-h2">' + forZip + ' <em>' + zip + '</em>' + (state ? ' — ' + (STATE_NAMES[state]||state) : '') + '</h2>';
 
+  // 1) Caution first, with official links.
+  html += buildCaution();
+
+  // 2) Authoritative sources: embedded House finder + Senate + Governor.
+  html += '<div class="official-block">' +
+    '<span class="official-head">' + ICO_CHECK + officialHead + '</span>' +
+    buildHouseEmbed() +
+    '<div class="official-links">' + buildSenatorsCard(state) + ((state && GOVERNORS[state]) ? renderGovCard(state) : '') + '</div>' +
+  '</div>';
+
+  // 3) Optional unofficial quick reference for the House rep (clearly labeled).
+  if (reps.length) {
+    var tag = es ? 'Referencia rápida no oficial' : 'Unofficial quick reference';
+    html += '<div class="unofficial-ref"><span class="unofficial-tag">' + ICO_INFO + tag + '</span>';
+    if (reps.length > 1) {
+      html += '<div class="quick-note">' + (es
+        ? 'Este código postal abarca más de un distrito congresional, por eso aparece más de un representante. Ingresa tu dirección completa en la herramienta oficial de arriba para encontrar tu representante exacto.'
+        : 'This ZIP code spans more than one congressional district, which is why more than one representative is shown. Enter your full address in the official tool above to find your exact representative.') + '</div>';
+    }
+    html += '<div class="reps-grid">';
     reps.forEach(r => { html += renderRepCard(r); });
-    senators.forEach(r => { html += renderRepCard(r); });
-    if (state && GOVERNORS[state]) html += renderGovCard(state);
-
-    html += '</div>';
-    var studyTip = lang==='es'
-      ? '<strong>Consejo de estudio:</strong> Anota los nombres de tus dos senadores, tu representante y tu gobernador en una tarjeta. Llévala a tu entrevista para repasarlos mientras esperas. El oficial puede preguntarte sobre cualquiera de estas tres preguntas.'
-      : '<strong>Study tip:</strong> Write down the names of your two senators, your representative, and your governor on a notecard. Bring it to your interview to review while waiting. The officer may ask any of these three questions.';
-    html += '<div style="padding:.875rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--r);font-size:.8rem;color:#92400E;line-height:1.7;">' + studyTip + '</div>';
-
-    inner.innerHTML = html;
-  } catch(e) {
-    var errHtml = lang==='es'
-      ? '<strong>No se pudieron cargar los datos.</strong>El servicio puede estar temporalmente no disponible o tu código postal puede no ser reconocido. Puedes encontrar a tus funcionarios directamente en:<br><br>' +
-        '• <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a> — Tus dos senadores de EE. UU.<br>' +
-        '• <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> — Tu representante de la Cámara<br>' +
-        '• Busca "<strong>gobernador de [tu estado]</strong>" en Google para el gobernador actual.'
-      : '<strong>Could not load representative data.</strong>The lookup service may be temporarily unavailable or your ZIP code may not be recognized. You can find your officials directly at:<br><br>' +
-        '• <a href="https://www.senate.gov/senators/index.htm" target="_blank" rel="noopener">senate.gov</a> — Your two US Senators<br>' +
-        '• <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> — Your House Representative<br>' +
-        '• Search "<strong>governor of [your state]</strong>" on Google for the current governor.';
-    inner.innerHTML = '<div class="error-box">' + errHtml + '</div>';
+    html += '</div></div>';
   }
+
+  // 4) Study tip.
+  html += '<div style="margin-top:1.5rem;padding:.875rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:var(--r);font-size:.8rem;color:#92400E;line-height:1.7;">' + (es
+    ? '<strong>Consejo de estudio:</strong> Anota los nombres de tus dos senadores, tu representante y tu gobernador en una tarjeta — verificados en los sitios oficiales de arriba. Llévala a tu entrevista para repasarlos mientras esperas.'
+    : '<strong>Study tip:</strong> Write down the names of your two senators, your representative, and your governor on a notecard — verified against the official sites above. Bring it to your interview to review while waiting.') + '</div>';
+
+  inner.innerHTML = html;
 }
 
 document.getElementById('zip-input').addEventListener('keydown', function(e) {
