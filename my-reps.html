@@ -336,39 +336,14 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
   </div>
 </footer>
 
+<script src="lang.js"></script>
 <script>
-// ── LANGUAGE ──
-var lang = (function() {
-  try {
-    var urlLang = new URLSearchParams(window.location.search).get('lang');
-    if (urlLang === 'en' || urlLang === 'es') { localStorage.setItem('usc-lang', urlLang); return urlLang; }
-    return localStorage.getItem('usc-lang') || 'en';
-  } catch(e) { return 'en'; }
-})();
-
-function setLang(l) {
-  lang = l;
-  localStorage.setItem('usc-lang', l);
-  document.getElementById('btn-en').classList.toggle('active', l === 'en');
-  document.getElementById('btn-es').classList.toggle('active', l === 'es');
-  applyLang();
-}
-
-function applyLang() {
-  document.querySelectorAll('[data-en]').forEach(function(el) {
-    el.innerHTML = el.getAttribute('data-' + lang);
-  });
+// Update the ZIP input placeholder whenever the language changes.
+window.onLangApply = function () {
   var zipEl = document.getElementById('zip-input');
   if (zipEl) zipEl.placeholder = zipEl.getAttribute('data-' + lang + '-placeholder') || zipEl.placeholder;
-}
-
-(function() {
-  if (lang === 'es') {
-    document.getElementById('btn-es').classList.add('active');
-    document.getElementById('btn-en').classList.remove('active');
-    applyLang();
-  }
-})();
+};
+initLang();
 
 // ── GOVERNOR DATA ── (as of mid-2025)
 var GOVERNORS = {

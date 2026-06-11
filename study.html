@@ -293,29 +293,10 @@ footer{background:#07182E;color:rgba(255,255,255,.55);padding:3rem 0 2rem;}
   </div>
 </footer>
 
+<script src="lang.js"></script>
 <script>
-// ── LANGUAGE ──
-var lang = 'en';
-function setLang(l) {
-  lang = l;
-  document.getElementById('btn-en').classList.toggle('active', l==='en');
-  document.getElementById('btn-es').classList.toggle('active', l==='es');
-  document.documentElement.lang = l;
-  try { localStorage.setItem('usc-lang', l); } catch(e) {}
-  applyLang();
-}
-function applyLang() {
-  document.querySelectorAll('[data-en]').forEach(el => {
-    var txt = el.getAttribute('data-' + lang);
-    if (txt) el.innerHTML = txt;
-  });
-  renderStudy();
-}
-try {
-  var urlLang = new URLSearchParams(window.location.search).get('lang');
-  if (urlLang === 'en' || urlLang === 'es') { lang = urlLang; localStorage.setItem('usc-lang', urlLang); }
-  else { var saved = localStorage.getItem('usc-lang'); if (saved) lang = saved; }
-} catch(e) {}
+// Re-render the study list whenever the language changes.
+window.onLangApply = function () { renderStudy(); };
 
 // ── QUESTIONS DATA ──
 // format: [id, q_en, a_en, extra_en, q_es, a_es, senior_flag (0/1)]
@@ -664,7 +645,7 @@ var obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // ── INIT ──
-if (lang === 'es') { setLang('es'); } else { renderStudy(); }
+initLang();
 </script>
 </body>
 </html>
