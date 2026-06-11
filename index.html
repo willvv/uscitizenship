@@ -85,6 +85,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .tab-btn{flex-shrink:0;padding:1rem 1.5rem;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:.4rem;}
 .tab-btn.active{color:var(--navy);border-bottom-color:var(--amber);}
 .tab-btn:hover:not(.active){color:var(--navy);background:var(--bg);}
+@media(max-width:600px){.tabs-inner{flex-wrap:wrap;overflow-x:visible;}.tab-btn{flex:1 1 33.33%;flex-direction:column;justify-content:center;text-align:center;gap:.25rem;padding:.6rem .25rem;font-size:.72rem;line-height:1.2;border-bottom-width:2px;}}
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
 
